@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "projects": "Dự án",
+    "experience": "Kinh nghiệm",
+    "contact": "Liên hệ",
+    "downloadCV": "Tải CV"
+  },
+  "name": {
+    "fullName": "Trương Thành Trung"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "subtitle": "Một Designer",
+    "titleLine1": "Đánh giá một cuốn sách",
+    "titleLine2": "bởi",
+    "titleHighlight": "bìa của nó...",
+    "caption": "VÌ NẾU BÌA KHÔNG GÂY ẤN TƯỢNG VỚI BẠN THÌ CÒN GÌ NỮA?",
+    "role": "Tôi là một Kỹ sư Phần mềm.",
+    "currentRole": "Hiện tại, tôi là Kỹ sư Phần mềm tại",
+    "company": "Facebook",
+    "description": "Một UI/UX designer tự học, hoạt động trong ngành hơn 3 năm. Tôi tạo ra các sản phẩm số có ý nghĩa và thú vị, tạo sự cân bằng giữa nhu cầu người dùng và mục tiêu kinh doanh.",
+    "aiTools": "Tôi tận dụng các công cụ phát triển AI để nâng cao năng suất và chất lượng code",
+    "aiToolsDescription": "Thành thạo sử dụng <strong class=\"text-purple-400\">Cursor</strong>, <strong class=\"text-blue-400\">Windsurf</strong> và <strong class=\"text-green-400\">GitHub Copilot</strong> để tăng tốc quy trình phát triển và cung cấp các giải pháp chất lượng cao."
+  },
+  "projects": {
+    "featured": "Dự án nổi bật",
+    "viewDetails": "Xem chi tiết",
+    "techStack": "Công nghệ"
+  },
+  "portalCraft": {
+    "title": "Ứng dụng Thương mại Điện tử",
+    "company": "Portal Craft",
+    "date": "Tháng 5/2022 - Tháng 2/2024",
+    "team": "Nhóm: 3-5 người",
+    "role": "Vai trò: Frontend Developer (Remote)",
+    "description": "Phát triển nhiều ứng dụng thương mại điện tử với tích hợp Lazada, tập trung vào tính năng mua nhóm và trải nghiệm mua sắm liền mạch. Xây dựng với ReactJS và hỗ trợ Node.js.",
+    "details": {
+      "point1": "Phát triển ứng dụng thương mại điện tử <strong>Co-bee</strong> với <strong>tích hợp Lazada</strong> để đồng bộ sản phẩm và quản lý đơn hàng liền mạch.",
+      "point2": "Xây dựng nền tảng thương mại điện tử <strong>Co-hoot</strong> với các tính năng mua sắm tiên tiến và kết nối với thị trường Lazada.",
+      "point3": "Triển khai tính năng <strong>Buy Together</strong> cho mua nhóm, cho phép người dùng tham gia nhóm và chia sẻ ưu đãi trên nền tảng Co-bee.",
+      "point4": "Sử dụng <strong>ReactJS</strong> cho phát triển frontend với tập trung vào hiệu suất và trải nghiệm người dùng.",
+      "point5": "Cung cấp hỗ trợ <strong>Node.js</strong> cho tích hợp backend và phát triển API.",
+      "point6": "Làm việc <strong>remote</strong> trong môi trường nhóm phân tán, đảm bảo giao tiếp và hợp tác hiệu quả."
+    }
+  },
+  "edmAgent": {
+    "title": "EDM Agent",
+    "company": "Generali",
+    "date": "Tháng 3/2024 - Hiện tại",
+    "team": "Nhóm: 4 người",
+    "role": "Vai trò: Fullstack",
+    "description": "Hệ thống toàn diện để quản lý di chuyển và vòng đời đại lý. Xử lý đăng ký hồ sơ và quản lý vòng đời đầy đủ bao gồm tạo mã, thăng hạng, hạ hạng, rút lui và đình chỉ. Được xây dựng với hiệu suất cao và bảo mật.",
+    "details": {
+      "point1": "Xây dựng hệ thống toàn diện để quản lý <strong>di chuyển đại lý</strong> và vòng đời, đảm bảo theo dõi chính xác các thay đổi trạng thái.",
+      "point2": "Bảo mật ứng dụng bằng xác thực <strong>JWT</strong> và quản lý <strong>phân quyền</strong> chi tiết để đảm bảo tính toàn vẹn dữ liệu.",
+      "point3": "Triển khai chức năng <strong>tải lên hàng loạt</strong> để xử lý khối lượng lớn dữ liệu đại lý một cách hiệu quả.",
+      "point4": "Phát triển dịch vụ <strong>email</strong> mạnh mẽ với hỗ trợ <strong>mẫu</strong> động cho thông báo hệ thống tự động.",
+      "point5": "Sử dụng <strong>Docker</strong> để containerization, đảm bảo triển khai nhất quán trên môi trường phát triển và sản xuất.",
+      "point6": "Tích hợp <strong class=\"text-zinc-300\">Spring Boot</strong>, <strong class=\"text-zinc-300\">Angular</strong>, <strong class=\"text-zinc-300\">Kafka</strong>, <strong class=\"text-zinc-300\">MSSQL Stored Procedures</strong> và <strong class=\"text-zinc-300\">Oracle</strong> (cho system permission page, action, user, role) để mang lại hiệu suất cao và độ tin cậy."
+    }
+  },
+  "workExperience": {
+    "title": "Kinh nghiệm làm việc",
+    "learnMore": "XEM THÊM",
+    "bottomText": "Bắt đầu hành trình lập trình từ năm <strong class=\"text-purple-400\">2022</strong>, với <strong class=\"text-blue-400\">3 năm làm remote phát triển frontend</strong> chuyên về <strong class=\"text-cyan-400\">ReactJS</strong>. Gần đây mới gia nhập với vai trò <strong class=\"text-green-500\">full-stack developer</strong> làm việc với <strong class=\"text-green-500\">Java backend</strong>, làm việc onsite để mở rộng chuyên môn trên toàn bộ ngăn xếp công nghệ.",
+    "techStackTitle": "Ngăn xếp công nghệ của tôi",
+    "addressLabel": "Vị trí văn phòng",
+    "address": "43-45 Tú Xương, Phường Võ Thị Sáu, Quận 3, Thành phố Hồ Chí Minh 700000",
+    "viewLocation": "Xem bản đồ",
+    "cards": [
+      {
+        "title": "CIB trên Di động",
+        "description": "Đưa khách hàng của bạn lên hệ thống một cách liền mạch bằng công cụ tuyệt vời của chúng tôi cho quy trình lên hệ thống kỹ thuật số."
+      },
+      {
+        "title": "CIB trên Di động",
+        "description": "Đưa khách hàng của bạn lên hệ thống một cách liền mạch bằng công cụ tuyệt vời của chúng tôi cho quy trình lên hệ thống kỹ thuật số."
+      },
+      {
+        "title": "CIB trên Di động",
+        "description": "Đưa khách hàng của bạn lên hệ thống một cách liền mạch bằng công cụ tuyệt vời của chúng tôi cho quy trình lên hệ thống kỹ thuật số."
+      },
+      {
+        "title": "CIB trên Di động",
+        "description": "Đưa khách hàng của bạn lên hệ thống một cách liền mạch bằng công cụ tuyệt vời của chúng tôi cho quy trình lên hệ thống kỹ thuật số."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "addressLabel": "Địa chỉ văn phòng",
+    "address": "43-45 Tú Xương, Phường Võ Thị Sáu, Quận 3, Thành phố Hồ Chí Minh 700000",
+    "emailLabel": "Email",
+    "phoneLabel": "Điện thoại"
+  },
+  "footer": {
+    "about": "Giới thiệu",
+    "aboutDescription": "Lập trình viên Full Stack đam mê tạo ra các trải nghiệm số đặc biệt với công nghệ hiện đại.",
+    "quickLinks": "Liên kết nhanh",
+    "contact": "Liên hệ",
+    "copyright": "© {year} Bảo lưu mọi quyền. Được xây dựng với Next.js & Tailwind CSS."
+  }
+}

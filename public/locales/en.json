@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "name": {
+    "fullName": "Thanh Trung Truong"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "subtitle": "A Designer who",
+    "titleLine1": "Judges a book",
+    "titleLine2": "by its",
+    "titleHighlight": "cover...",
+    "caption": "BECAUSE IF THE COVER DOES NOT IMPRESS YOU WHAT ELSE CAN?",
+    "role": "I'm a Software Engineer.",
+    "currentRole": "Currently, I'm a Software Engineer at",
+    "company": "Facebook",
+    "description": "A self-taught UI/UX designer, functioning in the industry for 3+ years now. I make meaningful and delightful digital products that create an equilibrium between user needs and business goals.",
+    "aiTools": "I leverage AI development tools to enhance productivity and code quality",
+    "aiToolsDescription": "Proficient in using <strong class=\"text-purple-400\">Cursor</strong>, <strong class=\"text-blue-400\">Windsurf</strong>, and <strong class=\"text-green-400\">GitHub Copilot</strong> to accelerate development workflows and deliver high-quality solutions."
+  },
+  "projects": {
+    "featured": "Featured Project",
+    "viewDetails": "View Details",
+    "techStack": "Tech Stack"
+  },
+  "portalCraft": {
+    "title": "E-commerce Applications",
+    "company": "Portal Craft",
+    "date": "May 2022 - Feb 2024",
+    "team": "Team: 3-5",
+    "role": "Role: Frontend Developer (Remote)",
+    "description": "Developed multiple e-commerce applications with Lazada integration, focusing on group buying features and seamless shopping experiences. Built with ReactJS and Node.js support.",
+    "details": {
+      "point1": "Developed <strong>Co-bee</strong> e-commerce app with <strong>Lazada integration</strong> for seamless product synchronization and order management.",
+      "point2": "Built <strong>Co-hoot</strong> e-commerce platform with advanced shopping features and Lazada marketplace connectivity.",
+      "point3": "Implemented <strong>Buy Together</strong> feature for group purchasing, enabling users to join groups and share deals on Co-bee platform.",
+      "point4": "Utilized <strong>ReactJS</strong> for frontend development with focus on performance and user experience.",
+      "point5": "Provided <strong>Node.js</strong> support for backend integration and API development.",
+      "point6": "Worked <strong>remotely</strong> in a distributed team environment, ensuring effective communication and collaboration."
+    }
+  },
+  "edmAgent": {
+    "title": "EDM Agent",
+    "company": "Generali",
+    "date": "Mar 2024 - Present",
+    "team": "Team: 4",
+    "role": "Role: Fullstack",
+    "description": "A comprehensive system for managing agent profile movements and lifecycles. Handles profile registration and full lifecycle management including code generation, promotion, demotion, withdrawal, and suspension. Built with high-performance and security in mind.",
+    "details": {
+      "point1": "Built a comprehensive system for managing <strong>agent movement</strong> and lifecycles, ensuring accurate tracking of status changes.",
+      "point2": "Secured the application with <strong>JWT</strong> authentication and granular <strong>permission</strong> management to ensure data integrity.",
+      "point3": "Implemented <strong>bulk upload</strong> functionality to process large volumes of agent data efficiently.",
+      "point4": "Developed a robust <strong>email service</strong> with dynamic <strong>template</strong> support for automated system notifications.",
+      "point5": "Utilized <strong>Docker</strong> for containerization, ensuring consistent deployment across development and production environments.",
+      "point6": "Integrated <strong class=\"text-zinc-300\">Spring Boot</strong>, <strong class=\"text-zinc-300\">Angular</strong>, <strong class=\"text-zinc-300\">Kafka</strong>, <strong class=\"text-zinc-300\">MSSQL Stored Procedures</strong>, and <strong class=\"text-zinc-300\">Oracle</strong> (for system permission page, action, user, role) to deliver high performance and reliability."
+    }
+  },
+  "workExperience": {
+    "title": "Work Experience",
+    "learnMore": "LEARN MORE",
+    "bottomText": "Started my developer journey in <strong class=\"text-purple-400\">2022</strong>, with <strong class=\"text-blue-400\">3 years of remote frontend development</strong> specializing in <strong class=\"text-cyan-400\">ReactJS</strong>. Recently joined as a <strong class=\"text-green-500\">full-stack developer</strong> with <strong class=\"text-green-500\">Java backend</strong>, working onsite to expand my expertise across the entire stack.",
+    "techStackTitle": "My Tech Stack",
+    "addressLabel": "Office Location",
+    "address": "43-45 Tú Xương, Võ Thị Sáu Ward, District 3, Ho Chi Minh City 700000",
+    "viewLocation": "View on Map",
+    "cards": [
+      {
+        "title": "CIB on the Mobile",
+        "description": "Take your client onboard seamlessly by our amazing tool of digital onboard process."
+      },
+      {
+        "title": "CIB on the Mobile",
+        "description": "Take your client onboard seamlessly by our amazing tool of digital onboard process."
+      },
+      {
+        "title": "CIB on the Mobile",
+        "description": "Take your client onboard seamlessly by our amazing tool of digital onboard process."
+      },
+      {
+        "title": "CIB on the Mobile",
+        "description": "Take your client onboard seamlessly by our amazing tool of digital onboard process."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "addressLabel": "Office Address",
+    "address": "43-45 Tú Xương, Võ Thị Sáu Ward, District 3, Ho Chi Minh City 700000",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone"
+  },
+  "footer": {
+    "about": "About",
+    "aboutDescription": "Full Stack Developer passionate about creating exceptional digital experiences with modern technologies.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "copyright": "© {year} All rights reserved. Built with Next.js & Tailwind CSS."
+  }
+}
