@@ -6,7 +6,7 @@ import { FaDownload } from "react-icons/fa";
 import ResumePDF from "./ResumePDF";
 
 interface PDFDownloadWrapperProps {
-  locale: string;
+  locale: "en" | "vi";
   t: (key: string) => string;
   isGenerating: boolean;
   setIsGenerating: (value: boolean) => void;
@@ -51,4 +51,3 @@ export default function PDFDownloadWrapper({
     </PDFDownloadLink>
   );
 }
-
