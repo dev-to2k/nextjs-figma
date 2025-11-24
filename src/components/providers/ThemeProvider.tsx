@@ -12,54 +12,38 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Get theme from localStorage or default to dark
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      setTheme(prefersDark ? "dark" : "light");
-    }
+    // Force dark mode
+    setTheme("dark");
   }, []);
 
   useEffect(() => {
     if (!mounted) return;
-    
+
     // Apply theme to document
     const root = document.documentElement;
-    
+
     // Remove both classes first
     root.classList.remove("dark", "light");
-    
+
     // Add the current theme class
-    if (theme === "dark") {
-      root.classList.add("dark");
-      root.classList.remove("light");
-    } else {
-      root.classList.add("light");
-      root.classList.remove("dark");
-    }
-    
+    root.classList.add("dark");
+
     // Also set data attribute for better compatibility
-    root.setAttribute("data-theme", theme);
-    
+    root.setAttribute("data-theme", "dark");
+
     // Save to localStorage
-    localStorage.setItem("theme", theme);
+    localStorage.setItem("theme", "dark");
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    // Disabled for now
+    // setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   return (
@@ -76,4 +60,3 @@ export function useTheme() {
   }
   return context;
 }
-

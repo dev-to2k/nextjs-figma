@@ -1,7 +1,7 @@
 "use client";
 
+// import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import ThemeToggle from "@/components/ThemeToggle";
 import DownloadCVButton from "@/components/cv/DownloadCVButton";
 import { useTranslation } from "@/components/providers/TranslationProvider";
 import { useLenis } from "@studio-freight/react-lenis";
@@ -11,7 +11,10 @@ export default function Header() {
   const { t } = useTranslation();
   const lenis = useLenis();
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
@@ -33,7 +36,10 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 md:px-12 bg-transparent dark:bg-transparent light:bg-[#fafafa]/90 backdrop-blur-sm dark:backdrop-blur-sm light:backdrop-blur-sm border-b border-transparent dark:border-transparent light:border-zinc-300/50 transition-colors duration-500 ease-in-out">
-      <Link href="#" className="flex items-center gap-3 text-white dark:text-white light:text-zinc-900 font-bold text-xl md:text-2xl tracking-tighter hover:text-purple-400 dark:hover:text-purple-400 light:hover:text-purple-600 transition-colors">
+      <Link
+        href="#"
+        className="flex items-center gap-3 text-white dark:text-white light:text-zinc-900 font-bold text-xl md:text-2xl tracking-tighter hover:text-purple-400 dark:hover:text-purple-400 light:hover:text-purple-600 transition-colors"
+      >
         {/* Logo Icon Placeholder */}
         <svg
           width="32"
@@ -65,7 +71,9 @@ export default function Header() {
             strokeLinejoin="round"
           />
         </svg>
-        <span className="hidden md:block">{t("name.fullName") || "Trương Thành Trung"}</span>
+        <span className="hidden md:block">
+          {t("name.fullName") || "Trương Thành Trung"}
+        </span>
       </Link>
       <div className="flex items-center gap-8">
         <nav className="hidden md:flex items-center gap-8">
@@ -102,7 +110,7 @@ export default function Header() {
           <div className="hidden md:block">
             <DownloadCVButton />
           </div>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <LanguageSwitcher />
         </div>
       </div>
