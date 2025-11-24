@@ -5,7 +5,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import { DiMsqlServer } from "react-icons/di";
 import { FaGlobe, FaTimes } from "react-icons/fa";
 import {
   SiAngular,
@@ -21,7 +22,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { DiMsqlServer } from "react-icons/di";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,7 +76,7 @@ export default function FeaturedProjects() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [activeTab, setActiveTab] = useState<"map" | "images">("map");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   const companyImages = [
     "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSytXjy0fxF2dx_32B94Asl9vTWOND98y0dKP2BAmnCnkZcV1trgObLorGCEmnrsURsJUs_foWUad-9qhFSdIt2-MtIAMr6elni4UJHbzmdEtBaJoLo0J_7kq3MqtVhSEQ9p_MDI=s483-k-no",
   ];
@@ -179,7 +179,7 @@ export default function FeaturedProjects() {
         {/* Timeline Container */}
         <div className="timeline-container absolute left-1/2 -translate-x-1/2 w-px h-full top-0 hidden lg:block pointer-events-none">
           <div className="timeline-line absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-purple-500/30 via-purple-500/20 to-purple-500/10 origin-top"></div>
-          
+
           {/* Timeline Dots */}
           <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="timeline-dot relative">
@@ -244,14 +244,18 @@ export default function FeaturedProjects() {
                 {showTooltip && (
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-4 py-2 bg-zinc-900 border border-purple-500/30 rounded-lg whitespace-nowrap shadow-lg pointer-events-none z-50">
                     <div className="text-sm text-white font-semibold mb-1">
-                      {locale === "en" 
-                        ? require("../../../public/locales/en.json").workExperience.addressLabel
-                        : require("../../../public/locales/vi.json").workExperience.addressLabel}
+                      {locale === "en"
+                        ? require("../../../public/locales/en.json")
+                            .workExperience.addressLabel
+                        : require("../../../public/locales/vi.json")
+                            .workExperience.addressLabel}
                     </div>
                     <div className="text-xs text-zinc-300">
-                      {locale === "en" 
-                        ? require("../../../public/locales/en.json").workExperience.address
-                        : require("../../../public/locales/vi.json").workExperience.address}
+                      {locale === "en"
+                        ? require("../../../public/locales/en.json")
+                            .workExperience.address
+                        : require("../../../public/locales/vi.json")
+                            .workExperience.address}
                     </div>
                     <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-8 border-transparent border-t-zinc-900"></div>
                   </div>
@@ -417,22 +421,26 @@ export default function FeaturedProjects() {
               </span>
               <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-600"></span>
               <span className="flex items-center gap-2">
-                <span className="text-blue-500">📅</span> {t("portalCraft.date") || "2022 - 2024"}
+                <span className="text-blue-500">📅</span>{" "}
+                {t("portalCraft.date") || "2022 - 2024"}
               </span>
               <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-600"></span>
               <span className="flex items-center gap-2">
-                <span className="text-blue-500">👥</span> {t("portalCraft.team") || "Team: 3-5"}
+                <span className="text-blue-500">👥</span>{" "}
+                {t("portalCraft.team") || "Team: 3-5"}
               </span>
               <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-600"></span>
               <span className="flex items-center gap-2">
-                <span className="text-blue-500">👨‍💻</span> {t("portalCraft.role") || "Role: Frontend Developer (Remote)"}
+                <span className="text-blue-500">👨‍💻</span>{" "}
+                {t("portalCraft.role") || "Role: Frontend Developer (Remote)"}
               </span>
             </div>
 
             <div className="relative p-6 md:p-8 rounded-2xl bg-white/5 dark:bg-white/5 light:bg-zinc-50 backdrop-blur-md border border-white/10 dark:border-white/10 light:border-zinc-200 mb-6 hover:border-blue-500/30 dark:hover:border-blue-500/30 light:hover:border-blue-400/50 transition-colors z-10">
               <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 dark:from-blue-500/10 light:from-blue-400/5 to-transparent rounded-2xl -z-10"></div>
               <p className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700 leading-relaxed mb-4">
-                {t("portalCraft.description") || "Developed multiple e-commerce applications with Lazada integration, focusing on group buying features and seamless shopping experiences. Built with ReactJS and Node.js support."}
+                {t("portalCraft.description") ||
+                  "Developed multiple e-commerce applications with Lazada integration, focusing on group buying features and seamless shopping experiences. Built with ReactJS and Node.js support."}
               </p>
 
               <details className="group">
@@ -455,32 +463,44 @@ export default function FeaturedProjects() {
                 <div className="mt-4 pl-4 border-l-2 border-blue-500/20 space-y-2 text-sm text-zinc-400">
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: t("portalCraft.details.point1") || "Developed <strong>Co-bee</strong> e-commerce app with <strong>Lazada integration</strong> for seamless product synchronization and order management.",
+                      __html:
+                        t("portalCraft.details.point1") ||
+                        "Developed <strong>Co-bee</strong> e-commerce app with <strong>Lazada integration</strong> for seamless product synchronization and order management.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: t("portalCraft.details.point2") || "Built <strong>Co-hoot</strong> e-commerce platform with advanced shopping features and Lazada marketplace connectivity.",
+                      __html:
+                        t("portalCraft.details.point2") ||
+                        "Built <strong>Co-hoot</strong> e-commerce platform with advanced shopping features and Lazada marketplace connectivity.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: t("portalCraft.details.point3") || "Implemented <strong>Buy Together</strong> feature for group purchasing, enabling users to join groups and share deals on Co-bee platform.",
+                      __html:
+                        t("portalCraft.details.point3") ||
+                        "Implemented <strong>Buy Together</strong> feature for group purchasing, enabling users to join groups and share deals on Co-bee platform.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: t("portalCraft.details.point4") || "Utilized <strong>ReactJS</strong> for frontend development with focus on performance and user experience.",
+                      __html:
+                        t("portalCraft.details.point4") ||
+                        "Utilized <strong>ReactJS</strong> for frontend development with focus on performance and user experience.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: t("portalCraft.details.point5") || "Provided <strong>Node.js</strong> support for backend integration and API development.",
+                      __html:
+                        t("portalCraft.details.point5") ||
+                        "Provided <strong>Node.js</strong> support for backend integration and API development.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: t("portalCraft.details.point6") || "Worked <strong>remotely</strong> in a distributed team environment, ensuring effective communication and collaboration.",
+                      __html:
+                        t("portalCraft.details.point6") ||
+                        "Worked <strong>remotely</strong> in a distributed team environment, ensuring effective communication and collaboration.",
                     }}
                   ></p>
                 </div>
@@ -522,11 +542,14 @@ export default function FeaturedProjects() {
                     </div>
                     <div className="w-24 h-8 bg-white/5 rounded border border-white/10"></div>
                   </div>
-                  
+
                   {/* Product Grid */}
                   <div className="grid grid-cols-3 gap-2 flex-1">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
-                      <div key={i} className="bg-white/5 rounded border border-white/10 p-2">
+                      <div
+                        key={i}
+                        className="bg-white/5 rounded border border-white/10 p-2"
+                      >
                         <div className="w-full h-16 bg-white/10 rounded mb-2"></div>
                         <div className="h-2 bg-white/10 rounded w-3/4 mb-1"></div>
                         <div className="h-2 bg-white/10 rounded w-1/2"></div>
@@ -558,14 +581,18 @@ export default function FeaturedProjects() {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white dark:text-white light:text-zinc-900 mb-1">
-                    {locale === "en" 
-                      ? require("../../../public/locales/en.json").workExperience.addressLabel
-                      : require("../../../public/locales/vi.json").workExperience.addressLabel}
+                    {locale === "en"
+                      ? require("../../../public/locales/en.json")
+                          .workExperience.addressLabel
+                      : require("../../../public/locales/vi.json")
+                          .workExperience.addressLabel}
                   </h3>
                   <p className="text-zinc-300 dark:text-zinc-300 light:text-zinc-600">
-                    {locale === "en" 
-                      ? require("../../../public/locales/en.json").workExperience.address
-                      : require("../../../public/locales/vi.json").workExperience.address}
+                    {locale === "en"
+                      ? require("../../../public/locales/en.json")
+                          .workExperience.address
+                      : require("../../../public/locales/vi.json")
+                          .workExperience.address}
                   </p>
                 </div>
                 <button
@@ -575,7 +602,7 @@ export default function FeaturedProjects() {
                   <FaTimes className="text-white dark:text-white light:text-zinc-900" />
                 </button>
               </div>
-              
+
               {/* Tab Navigation */}
               <div className="flex gap-2 mt-6">
                 <button
@@ -600,7 +627,7 @@ export default function FeaturedProjects() {
                 </button>
               </div>
             </div>
-            
+
             {/* Tab Content */}
             {activeTab === "map" ? (
               <div className="relative h-[500px]">
@@ -616,7 +643,9 @@ export default function FeaturedProjects() {
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg border border-white/20">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs font-semibold text-zinc-800">Location</span>
+                    <span className="text-xs font-semibold text-zinc-800">
+                      Location
+                    </span>
                   </div>
                 </div>
               </div>
@@ -632,14 +661,16 @@ export default function FeaturedProjects() {
                         className="object-contain"
                       />
                     </div>
-                    
+
                     {/* Navigation Arrows */}
                     {companyImages.length > 1 && (
                       <>
                         <button
                           onClick={() =>
                             setCurrentImageIndex(
-                              (prev) => (prev - 1 + companyImages.length) % companyImages.length
+                              (prev) =>
+                                (prev - 1 + companyImages.length) %
+                                companyImages.length
                             )
                           }
                           className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 border border-white/20 flex items-center justify-center transition-all backdrop-blur-sm"
@@ -658,7 +689,7 @@ export default function FeaturedProjects() {
                         </button>
                       </>
                     )}
-                    
+
                     {/* Image Indicators */}
                     {companyImages.length > 1 && (
                       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
