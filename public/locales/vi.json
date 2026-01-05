@@ -16,10 +16,10 @@
     "titleLine2": "bởi",
     "titleHighlight": "bìa của nó...",
     "caption": "VÌ NẾU BÌA KHÔNG GÂY ẤN TƯỢNG VỚI BẠN THÌ CÒN GÌ NỮA?",
-    "role": "Tôi là một Kỹ sư Phần mềm.",
-    "currentRole": "Hiện tại, tôi là Kỹ sư Phần mềm tại",
-    "company": "Facebook",
-    "description": "Một UI/UX designer tự học, hoạt động trong ngành hơn 3 năm. Tôi tạo ra các sản phẩm số có ý nghĩa và thú vị, tạo sự cân bằng giữa nhu cầu người dùng và mục tiêu kinh doanh.",
+    "role": "Tôi là một Full-stack Developer (Frontend Specialist).",
+    "currentRole": "Hiện tại, tôi là Full-stack Developer tại",
+    "company": "Generali Vietnam",
+    "description": "Chuyên gia về kỹ thuật hỗ trợ bởi AI, minh chứng qua việc tăng tốc dự án doanh nghiệp 8 tháng hoàn thành chỉ trong 3 tháng (nhanh hơn 60%). Chuyên về kiến trúc Frontend hiệu suất cao.",
     "aiTools": "Tôi tận dụng các công cụ phát triển AI để nâng cao năng suất và chất lượng code",
     "aiToolsDescription": "Thành thạo sử dụng <strong class=\"text-purple-400\">Cursor</strong>, <strong class=\"text-blue-400\">Windsurf</strong> và <strong class=\"text-green-400\">GitHub Copilot</strong> để tăng tốc quy trình phát triển và cung cấp các giải pháp chất lượng cao."
   },
@@ -45,25 +45,41 @@
     }
   },
   "edmAgent": {
-    "title": "EDM Agent",
-    "company": "Generali",
-    "date": "Tháng 3/2024 - Hiện tại",
-    "team": "Nhóm: 4 người",
-    "role": "Vai trò: Fullstack",
-    "description": "Hệ thống toàn diện để quản lý di chuyển và vòng đời đại lý. Xử lý đăng ký hồ sơ và quản lý vòng đời đầy đủ bao gồm tạo mã, thăng hạng, hạ hạng, rút lui và đình chỉ. Được xây dựng với hiệu suất cao và bảo mật.",
+    "title": "Hệ thống Quản lý Hoạt động Bán hàng",
+    "company": "Generali Vietnam",
+    "date": "Tháng 6/2023 - Hiện tại",
+    "team": "Nhóm: 5+ người",
+    "role": "Vai trò: Lead Developer",
+    "description": "Hệ thống microservices tập trung quản lý KPIs bán hàng và hiệu suất đại lý cho hàng nghìn người dùng. Tập trung vào Khả năng mở rộng & Xử lý Real-time sử dụng Next.js SSR và tích hợp Apache Kafka.",
     "details": {
-      "point1": "Xây dựng hệ thống toàn diện để quản lý <strong>di chuyển đại lý</strong> và vòng đời, đảm bảo theo dõi chính xác các thay đổi trạng thái.",
-      "point2": "Bảo mật ứng dụng bằng xác thực <strong>JWT</strong> và quản lý <strong>phân quyền</strong> chi tiết để đảm bảo tính toàn vẹn dữ liệu.",
-      "point3": "Triển khai chức năng <strong>tải lên hàng loạt</strong> để xử lý khối lượng lớn dữ liệu đại lý một cách hiệu quả.",
-      "point4": "Phát triển dịch vụ <strong>email</strong> mạnh mẽ với hỗ trợ <strong>mẫu</strong> động cho thông báo hệ thống tự động.",
-      "point5": "Sử dụng <strong>Docker</strong> để containerization, đảm bảo triển khai nhất quán trên môi trường phát triển và sản xuất.",
-      "point6": "Tích hợp <strong class=\"text-zinc-300\">Spring Boot</strong>, <strong class=\"text-zinc-300\">Angular</strong>, <strong class=\"text-zinc-300\">Kafka</strong>, <strong class=\"text-zinc-300\">MSSQL Stored Procedures</strong> và <strong class=\"text-zinc-300\">Oracle</strong> (cho system permission page, action, user, role) để mang lại hiệu suất cao và độ tin cậy."
+      "point1": "<strong>Kiến trúc Frontend:</strong> Thiết kế Dashboard mở rộng sử dụng <strong>Next.js (App Router)</strong>. Triển khai <strong>Lazy Loading</strong> và <strong>Dynamic Imports</strong> để tối ưu kích thước bundle.",
+      "point2": "<strong>Triển khai Backend:</strong> Xây dựng <strong>Java Spring Boot APIs</strong> xử lý KPIs và theo dõi hoạt động. Tích hợp endpoints RESTful chuẩn theo kiến trúc clean.",
+      "point3": "<strong>Tích hợp Kafka:</strong> Tích hợp <strong>Apache Kafka</strong> consumers để nhận và xử lý cập nhật dữ liệu bất đồng bộ từ hệ thống Core, đảm bảo độ chính xác dữ liệu.",
+      "point4": "<strong>Best Practices:</strong> Tuân thủ Best Practices chính thức cho khả năng tái sử dụng và bảo trì component.",
+      "point5": "<strong>Công nghệ:</strong> Java, Spring Boot (MVC, Security), Next.js, Kafka, Oracle.",
+      "point6": "<strong>Tác động:</strong> Giảm thời gian tải ban đầu <strong>40%</strong> so với giải pháp CSR cũ."
+    }
+  },
+  "edmProject": {
+    "title": "Quản lý Tài liệu Doanh nghiệp (EDM)",
+    "company": "Generali Vietnam",
+    "date": "Tháng 6/2023 - Hiện tại",
+    "team": "Nhóm: 4 người",
+    "role": "Vai trò: Core System Builder",
+    "description": "Hệ thống quản lý tài liệu bảo mật <strong>hoàn thành trước thời hạn 5 tháng</strong> (3 tháng thực tế so với 8 tháng kế hoạch) nhờ quy trình phát triển hỗ trợ bởi AI.",
+    "details": {
+      "point1": "<strong>Cột mốc Giao hàng Thần tốc:</strong> Hoàn thành module end-to-end <strong>trước thời hạn 5 tháng</strong> (3 tháng thực tế vs 8 tháng kế hoạch) nhờ phát triển định hướng AI.",
+      "point2": "<strong>Giao hàng End-to-End:</strong> Tận dụng công cụ AI để prototype nhanh giao diện <strong>Angular</strong> phức tạp và tự động hóa các lớp persistence <strong>Java Spring Boot</strong>.",
+      "point3": "<strong>Độ ổn định:</strong> Hệ thống hoạt động cực kỳ ổn định khi ra mắt, xử lý xác thực dữ liệu quy mô lớn với <strong>zero lỗi nghiêm trọng</strong>.",
+      "point4": "<strong>Frontend:</strong> Thiết kế Dynamic Forms phức tạp sử dụng Angular & RxJS, đảm bảo xác thực phía client nghiêm ngặt.",
+      "point5": "<strong>Tích hợp Backend:</strong> Triển khai REST API sử dụng Spring Data JPA và Hibernate để xử lý lưu trữ dữ liệu hiệu quả.",
+      "point6": "<strong>Tech Stack:</strong> Java Spring Boot, Angular, Oracle DB (Stored Procedures), JWT & Encryption."
     }
   },
   "workExperience": {
     "title": "Kinh nghiệm làm việc",
     "learnMore": "XEM THÊM",
-    "bottomText": "Bắt đầu hành trình lập trình từ năm <strong class=\"text-purple-400\">2022</strong>, với <strong class=\"text-blue-400\">3 năm làm remote phát triển frontend</strong> chuyên về <strong class=\"text-cyan-400\">ReactJS</strong>. Gần đây mới gia nhập với vai trò <strong class=\"text-green-500\">full-stack developer</strong> làm việc với <strong class=\"text-green-500\">Java backend</strong>, làm việc onsite để mở rộng chuyên môn trên toàn bộ ngăn xếp công nghệ.",
+    "bottomText": "Bắt đầu hành trình lập trình từ năm <strong class=\"text-purple-400\">2022</strong>, với <strong class=\"text-blue-400\">kinh nghiệm làm remote phát triển frontend</strong> chuyên về <strong class=\"text-cyan-400\">ReactJS</strong>. Hiện đang làm <strong class=\"text-green-500\">Full-stack Developer</strong> tại <strong class=\"text-green-500\">Generali Vietnam</strong>, xây dựng ứng dụng cấp doanh nghiệp với <strong class=\"text-red-400\">Java Spring Boot</strong>, <strong class=\"text-blue-400\">Next.js</strong> và <strong>Angular</strong>.",
     "techStackTitle": "Ngăn xếp công nghệ của tôi",
     "addressLabel": "Vị trí văn phòng",
     "address": "43-45 Tú Xương, Phường Võ Thị Sáu, Quận 3, Thành phố Hồ Chí Minh 700000",

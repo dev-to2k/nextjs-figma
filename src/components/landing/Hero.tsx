@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslation } from "@/components/providers/TranslationProvider";
+
 import Image from "next/image";
 import Particles from "../animate-bg/Particles";
 import AnimatedContent from "../animate-content/AnimatedContent";
@@ -5,6 +9,7 @@ import BlurText from "../animate-text/BlurText";
 import SplitText from "../animate-text/SplitText";
 
 export default function Hero() {
+  const { t } = useTranslation();
   return (
     <div className="relative w-full h-screen">
       <Particles
@@ -21,7 +26,7 @@ export default function Hero() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="max-w-4xl mx-auto px-6 text-center pointer-events-auto">
           <SplitText
-            text="Hi, I'm Thanh Trung Truong"
+            text={`${t("hero.greeting")} ${t("name.fullName")}`}
             className="text-4xl md:text-6xl font-bold mb-4 text-center"
             delay={50}
             duration={1}
@@ -35,7 +40,7 @@ export default function Hero() {
 
           <div className="mb-8">
             <BlurText
-              text="I'm a Software Engineer."
+              text={t("hero.role")}
               className="text-2xl md:text-3xl font-semibold mb-4 justify-center"
               delay={150}
               animateBy="words"
@@ -44,14 +49,12 @@ export default function Hero() {
               rootMargin="-100px"
             />
             <p className="text-base md:text-lg mb-4 text-white/80 max-w-2xl mx-auto">
-              I leverage AI development tools to enhance productivity and code
-              quality
+              {t("hero.description")}
             </p>
-            <p className="text-sm md:text-base text-white/70 max-w-2xl mx-auto">
-              Proficient in using Cursor, Windsurf, and GitHub Copilot to
-              accelerate development workflows and deliver high-quality
-              solutions.
-            </p>
+            <p
+              className="text-sm md:text-base text-white/70 max-w-2xl mx-auto"
+              dangerouslySetInnerHTML={{ __html: t("hero.aiToolsDescription") }}
+            />
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">

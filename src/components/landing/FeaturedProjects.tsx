@@ -189,8 +189,8 @@ export default function FeaturedProjects() {
           </div>
           <div className="absolute top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="timeline-dot relative">
-              <div className="w-4 h-4 rounded-full bg-purple-500 border-2 border-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.6)]"></div>
-              <div className="absolute inset-0 rounded-full bg-purple-400 animate-ping opacity-75"></div>
+              <div className="w-4 h-4 rounded-full bg-green-500 border-2 border-green-400 shadow-[0_0_10px_rgba(34,197,94,0.6)]"></div>
+              <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75"></div>
             </div>
           </div>
         </div>
@@ -323,6 +323,8 @@ export default function FeaturedProjects() {
 
             <div className="flex flex-wrap gap-4 text-zinc-400 text-sm font-mono">
               <TechBadge name="Java Spring Boot" />
+              <TechBadge name="Next.js" />
+              <TechBadge name="React" />
               <TechBadge name="Angular" />
               <TechBadge name="Kafka" />
               <TechBadge name="MSSQL Stored Procedures" />
@@ -340,7 +342,7 @@ export default function FeaturedProjects() {
               {/* Windows Title Bar */}
               <div className="absolute top-0 left-0 right-0 h-8 bg-[#2a0a0a] flex items-center justify-between px-3 border-b border-white/5">
                 <span className="text-[10px] text-zinc-400 font-sans">
-                  EDM Agent Management System
+                  Sales Activity Management System
                 </span>
                 <div className="flex gap-2">
                   <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
@@ -405,46 +407,57 @@ export default function FeaturedProjects() {
           </div>
         </div>
 
-        {/* Project 2 - Portal Craft */}
+        {/* Project 2 - EDM (Security & Optimization) */}
         <div className="project-row grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group relative z-10">
           <div className="order-2 lg:order-1">
-            <h4 className="text-blue-500 font-semibold mb-2 tracking-wide uppercase text-sm">
+            <h4 className="text-green-500 font-semibold mb-2 tracking-wide uppercase text-sm">
               {t("projects.featured")}
             </h4>
             <h3 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-zinc-900 mb-2">
-              {t("portalCraft.title") || "E-commerce Applications"}
+              {t("edmProject.title") || "Enterprise Document Management (EDM)"}
             </h3>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-zinc-400 dark:text-zinc-400 light:text-zinc-600 text-sm mb-6 font-mono">
               <span className="flex items-center gap-2">
-                <span className="text-blue-500">🏢</span>
-                {t("portalCraft.company") || "Portal Craft"}
+                <div className="p-1 rounded-sm relative w-8 h-8 flex items-center justify-center">
+                  <Image
+                    src="https://companieslogo.com/img/orig/G.MI-a0608447.png?t=1720244491"
+                    alt="Generali"
+                    fill
+                    className="object-contain p-0.5"
+                  />
+                </div>
+                {t("edmProject.company") || "Generali Vietnam"}
               </span>
               <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-600"></span>
               <span className="flex items-center gap-2">
-                <span className="text-blue-500">📅</span>{" "}
-                {t("portalCraft.date") || "2022 - 2024"}
+                <span className="text-green-500">📅</span>{" "}
+                {t("edmProject.date") || "Jun 2023 - Present"}
               </span>
               <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-600"></span>
               <span className="flex items-center gap-2">
-                <span className="text-blue-500">👥</span>{" "}
-                {t("portalCraft.team") || "Team: 3-5"}
+                <span className="text-green-500">👥</span>{" "}
+                {t("edmProject.team") || "Team: 4"}
               </span>
               <span className="hidden md:block w-1 h-1 rounded-full bg-zinc-600"></span>
               <span className="flex items-center gap-2">
-                <span className="text-blue-500">👨‍💻</span>{" "}
-                {t("portalCraft.role") || "Role: Frontend Developer (Remote)"}
+                <span className="text-green-500">👨‍💻</span>{" "}
+                {t("edmProject.role") || "Role: Core System Builder"}
               </span>
             </div>
 
-            <div className="relative p-6 md:p-8 rounded-2xl bg-white/5 dark:bg-white/5 light:bg-zinc-50 backdrop-blur-md border border-white/10 dark:border-white/10 light:border-zinc-200 mb-6 hover:border-blue-500/30 dark:hover:border-blue-500/30 light:hover:border-blue-400/50 transition-colors z-10">
-              <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 dark:from-blue-500/10 light:from-blue-400/5 to-transparent rounded-2xl -z-10"></div>
-              <p className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700 leading-relaxed mb-4">
-                {t("portalCraft.description") ||
-                  "Developed multiple e-commerce applications with Lazada integration, focusing on group buying features and seamless shopping experiences. Built with ReactJS and Node.js support."}
-              </p>
+            <div className="relative p-6 md:p-8 rounded-2xl bg-white/5 dark:bg-white/5 light:bg-zinc-50 backdrop-blur-md border border-white/10 dark:border-white/10 light:border-zinc-200 mb-6 hover:border-green-500/30 dark:hover:border-green-500/30 light:hover:border-green-400/50 transition-colors z-10">
+              <div className="absolute inset-0 bg-linear-to-br from-green-500/10 dark:from-green-500/10 light:from-green-400/5 to-transparent rounded-2xl -z-10"></div>
+              <p
+                className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700 leading-relaxed mb-4"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    t("edmProject.description") ||
+                    "A secure document management system focusing on Security & Data Optimization. Handles high-volume document queries with banking-grade security standards.",
+                }}
+              />
 
               <details className="group">
-                <summary className="flex items-center gap-2 text-blue-400 text-sm font-medium cursor-pointer hover:text-blue-300 transition-colors select-none">
+                <summary className="flex items-center gap-2 text-green-400 text-sm font-medium cursor-pointer hover:text-green-300 transition-colors select-none">
                   <span>{t("projects.viewDetails")}</span>
                   <svg
                     className="w-4 h-4 transition-transform group-open:rotate-180"
@@ -460,47 +473,47 @@ export default function FeaturedProjects() {
                     />
                   </svg>
                 </summary>
-                <div className="mt-4 pl-4 border-l-2 border-blue-500/20 space-y-2 text-sm text-zinc-400">
+                <div className="mt-4 pl-4 border-l-2 border-green-500/20 space-y-2 text-sm text-zinc-400">
                   <p
                     dangerouslySetInnerHTML={{
                       __html:
-                        t("portalCraft.details.point1") ||
-                        "Developed <strong>Co-bee</strong> e-commerce app with <strong>Lazada integration</strong> for seamless product synchronization and order management.",
+                        t("edmProject.details.point1") ||
+                        "<strong>Role:</strong> Core System Builder for <strong>Document Retrieval & Storage</strong>.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
                       __html:
-                        t("portalCraft.details.point2") ||
-                        "Built <strong>Co-hoot</strong> e-commerce platform with advanced shopping features and Lazada marketplace connectivity.",
+                        t("edmProject.details.point2") ||
+                        "<strong>Backend Optimization:</strong> Engineered secure RESTful APIs. Refactored Oracle Stored Procedures, improving query speed by <strong>30%</strong>.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
                       __html:
-                        t("portalCraft.details.point3") ||
-                        "Implemented <strong>Buy Together</strong> feature for group purchasing, enabling users to join groups and share deals on Co-bee platform.",
+                        t("edmProject.details.point3") ||
+                        "<strong>Security:</strong> Implemented strict <strong>RBAC</strong> and encryption standards for banking-grade security.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
                       __html:
-                        t("portalCraft.details.point4") ||
-                        "Utilized <strong>ReactJS</strong> for frontend development with focus on performance and user experience.",
+                        t("edmProject.details.point4") ||
+                        '<strong>Frontend UX:</strong> Developed complex "Advanced Search" interface with <strong>Zero-dependency</strong> approach.',
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
                       __html:
-                        t("portalCraft.details.point5") ||
-                        "Provided <strong>Node.js</strong> support for backend integration and API development.",
+                        t("edmProject.details.point5") ||
+                        "<strong>Performance:</strong> Optimized for millions of records with efficient indexing and caching.",
                     }}
                   ></p>
                   <p
                     dangerouslySetInnerHTML={{
                       __html:
-                        t("portalCraft.details.point6") ||
-                        "Worked <strong>remotely</strong> in a distributed team environment, ensuring effective communication and collaboration.",
+                        t("edmProject.details.point6") ||
+                        "<strong>Tech Stack:</strong> Java Spring Boot, Angular, Oracle DB (Stored Procedures), JWT & Encryption.",
                     }}
                   ></p>
                 </div>
@@ -508,59 +521,92 @@ export default function FeaturedProjects() {
             </div>
 
             <div className="flex flex-wrap gap-4 text-zinc-400 text-sm font-mono">
-              <TechBadge name="React" />
-              <TechBadge name="Node.js" />
-              <TechBadge name="Bootstrap" />
+              <TechBadge name="Java Spring Boot" />
+              <TechBadge name="Angular" />
+              <TechBadge name="Oracle" />
+              <TechBadge name="JWT & Encryption" />
             </div>
           </div>
 
           <div className="order-1 lg:order-2 relative">
-            {/* Image Placeholder - E-commerce UI */}
-            <div className="aspect-video rounded-xl overflow-hidden bg-[#050a1a] border border-white/10 shadow-2xl group-hover:scale-[1.02] transition-transform duration-500 relative">
-              <div className="absolute inset-0 bg-linear-to-br from-blue-900/20 to-transparent"></div>
+            {/* Image Placeholder - Document Management UI */}
+            <div className="aspect-video rounded-xl overflow-hidden bg-[#051a0a] border border-white/10 shadow-2xl group-hover:scale-[1.02] transition-transform duration-500 relative">
+              <div className="absolute inset-0 bg-linear-to-br from-green-900/20 to-transparent"></div>
 
-              {/* Browser Title Bar */}
-              <div className="absolute top-0 left-0 right-0 h-8 bg-[#0a1528] flex items-center justify-between px-3 border-b border-white/5">
+              {/* Windows Title Bar */}
+              <div className="absolute top-0 left-0 right-0 h-8 bg-[#0a280f] flex items-center justify-between px-3 border-b border-white/5">
                 <span className="text-[10px] text-zinc-400 font-sans">
-                  Co-bee / Co-hoot E-commerce Platform
+                  Enterprise Document Management (EDM)
                 </span>
                 <div className="flex gap-2">
                   <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
                   <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                </div>
+              </div>
+
+              {/* Action Bar */}
+              <div className="absolute top-8 left-0 right-0 h-12 bg-[#081f0d] border-b border-white/5 flex items-center px-4 gap-4">
+                <div className="flex gap-2">
+                  <div className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-[8px] text-green-300">
+                    Search
+                  </div>
+                  <div className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[8px] text-zinc-400">
+                    Upload
+                  </div>
+                  <div className="px-2 py-1 bg-white/5 border border-white/10 rounded text-[8px] text-zinc-400">
+                    Download
+                  </div>
+                </div>
+                <div className="w-px h-8 bg-white/10"></div>
+                <div className="flex-1 h-6 bg-white/5 rounded border border-white/10 px-2 flex items-center">
+                  <span className="text-[8px] text-zinc-500">
+                    🔍 Search documents...
+                  </span>
                 </div>
               </div>
 
               {/* Main Content Area */}
-              <div className="absolute top-8 inset-0 p-4 bg-[#030510]">
-                <div className="flex flex-col gap-3 h-full">
-                  {/* Header */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-2">
-                      <div className="w-16 h-8 bg-blue-500/20 rounded border border-blue-500/30"></div>
-                      <div className="w-20 h-8 bg-white/5 rounded border border-white/10"></div>
+              <div className="absolute top-20 inset-0 p-4 bg-[#030f05]">
+                <div className="flex gap-4 h-full">
+                  {/* Document List */}
+                  <div className="flex-1 h-full bg-white/5 rounded border border-white/5 p-2">
+                    <div className="grid grid-cols-5 gap-2 mb-2 border-b border-white/5 pb-2">
+                      <div className="h-2 bg-green-500/20 rounded"></div>
+                      <div className="h-2 bg-green-500/20 rounded col-span-2"></div>
+                      <div className="h-2 bg-green-500/20 rounded"></div>
+                      <div className="h-2 bg-green-500/20 rounded"></div>
                     </div>
-                    <div className="w-24 h-8 bg-white/5 rounded border border-white/10"></div>
-                  </div>
-
-                  {/* Product Grid */}
-                  <div className="grid grid-cols-3 gap-2 flex-1">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
-                      <div
-                        key={i}
-                        className="bg-white/5 rounded border border-white/10 p-2"
-                      >
-                        <div className="w-full h-16 bg-white/10 rounded mb-2"></div>
-                        <div className="h-2 bg-white/10 rounded w-3/4 mb-1"></div>
-                        <div className="h-2 bg-white/10 rounded w-1/2"></div>
+                    <div className="space-y-2">
+                      <div className="flex gap-2 items-center">
+                        <div className="w-4 h-4 bg-green-500/30 rounded"></div>
+                        <div className="h-2 bg-white/10 rounded flex-1"></div>
                       </div>
-                    ))}
+                      <div className="flex gap-2 items-center">
+                        <div className="w-4 h-4 bg-green-500/30 rounded"></div>
+                        <div className="h-2 bg-white/10 rounded flex-1"></div>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <div className="w-4 h-4 bg-green-500/30 rounded"></div>
+                        <div className="h-2 bg-white/10 rounded flex-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Preview Panel */}
+                  <div className="w-1/3 h-full bg-white/5 rounded border border-white/5 p-2 flex flex-col gap-2">
+                    <div className="w-full h-16 bg-green-500/10 rounded flex items-center justify-center">
+                      <span className="text-[8px] text-green-400">
+                        📄 Preview
+                      </span>
+                    </div>
+                    <div className="w-full h-2 bg-white/10 rounded"></div>
+                    <div className="w-3/4 h-2 bg-white/10 rounded"></div>
                   </div>
                 </div>
               </div>
             </div>
             {/* Glow behind image */}
-            <div className="absolute -inset-4 bg-blue-600/20 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute -inset-4 bg-green-600/20 blur-3xl -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
       </div>

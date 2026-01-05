@@ -1,131 +1,250 @@
-import React from "react";
 import {
   Document,
+  Image,
   Page,
+  StyleSheet,
   Text,
   View,
-  StyleSheet,
 } from "@react-pdf/renderer";
+import React from "react";
 
-// Register fonts if needed
-// Font.register({
-//   family: "Roboto",
-//   src: "https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxP.ttf",
-// });
-
+// Modern Professional CV - ITViec Style
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
     backgroundColor: "#ffffff",
-    padding: 40,
     fontFamily: "Helvetica",
-    fontSize: 10,
+    fontSize: 9,
+    padding: 30,
+    paddingBottom: 20,
   },
+
+  // ================ HEADER SECTION (Dark Background) ================
   header: {
-    marginBottom: 25,
-    borderBottomWidth: 2,
-    borderBottomColor: "#9333ea",
-    borderBottomStyle: "solid",
-    paddingBottom: 15,
+    backgroundColor: "#2D3748",
+    padding: 30,
+    paddingBottom: 25,
+    marginTop: -30,
+    marginHorizontal: -30,
+    marginBottom: 15,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  avatarContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 6,
+    overflow: "hidden",
+    marginRight: 20,
+    backgroundColor: "#4A5568",
+  },
+  avatar: {
+    width: 80,
+    height: 80,
+  },
+  headerInfo: {
+    flex: 1,
+    flexDirection: "column",
   },
   name: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: "bold",
-    color: "#1f2937",
-    marginBottom: 5,
+    color: "#ffffff",
+    marginBottom: 6,
     fontFamily: "Helvetica-Bold",
   },
-  title: {
-    fontSize: 16,
-    color: "#9333ea",
-    marginBottom: 10,
-  },
-  contactInfo: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    fontSize: 10,
-    color: "#6b7280",
-    marginTop: 5,
-  },
-  contactItem: {
-    marginRight: 15,
-    marginBottom: 5,
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#9333ea",
-    marginBottom: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#e5e7eb",
-    borderBottomStyle: "solid",
-    paddingBottom: 5,
-    fontFamily: "Helvetica-Bold",
-  },
-  experienceItem: {
+  jobTitle: {
+    fontSize: 12,
+    color: "#A0AEC0",
+    letterSpacing: 2,
+    textTransform: "uppercase",
     marginBottom: 15,
   },
-  experienceHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 5,
-  },
-  companyName: {
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#1f2937",
-    fontFamily: "Helvetica-Bold",
-  },
-  date: {
-    fontSize: 10,
-    color: "#6b7280",
-  },
-  role: {
-    fontSize: 12,
-    color: "#4b5563",
-    marginBottom: 5,
-    fontStyle: "italic",
-  },
-  description: {
-    fontSize: 10,
-    color: "#374151",
-    lineHeight: 1.4,
-    marginTop: 5,
-    textAlign: "left",
-  },
-  skillsList: {
+  contactRow: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: 8,
+    gap: 8,
   },
-  skillTag: {
-    backgroundColor: "#f3f4f6",
-    paddingTop: 4,
-    paddingBottom: 4,
-    paddingLeft: 8,
-    paddingRight: 8,
-    marginRight: 5,
-    marginBottom: 5,
+  contactItem: {
     fontSize: 9,
-    color: "#1f2937",
+    color: "#ffffff",
+    marginRight: 15,
+    marginBottom: 4,
   },
-  projectItem: {
+  contactSeparator: {
+    fontSize: 9,
+    color: "#4A5568",
+    marginRight: 15,
+  },
+
+  // ================ BODY SECTION ================
+  body: {
+    // Padding is now handled by Page
+    paddingTop: 10,
+  },
+
+  // Section Container
+  section: {
+    marginBottom: 18,
+  },
+  sectionTitle: {
+    fontSize: 11,
+    fontWeight: "bold",
+    color: "#1A202C",
+    fontFamily: "Helvetica-Bold",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    borderBottomWidth: 1,
+    borderBottomColor: "#E2E8F0",
+    paddingBottom: 6,
     marginBottom: 12,
   },
-  projectTitle: {
-    fontSize: 12,
+
+  // About Me
+  aboutText: {
+    fontSize: 9,
+    color: "#4A5568",
+    lineHeight: 1.5,
+    textAlign: "justify",
+  },
+
+  // Education
+  educationItem: {
+    marginBottom: 6,
+  },
+  schoolName: {
+    fontSize: 10,
     fontWeight: "bold",
-    color: "#1f2937",
-    marginBottom: 3,
+    color: "#1A202C",
     fontFamily: "Helvetica-Bold",
   },
-  techStack: {
+  educationDetails: {
     fontSize: 9,
-    color: "#6b7280",
-    marginTop: 3,
+    color: "#718096",
+    marginTop: 2,
+  },
+
+  // Skills
+  skillRow: {
+    flexDirection: "row",
+    marginBottom: 6,
+    alignItems: "flex-start",
+  },
+  skillLevel: {
+    width: 75,
+    fontSize: 9,
+    color: "#1A202C",
+    fontWeight: "bold",
+    fontFamily: "Helvetica-Bold",
+  },
+  skillTags: {
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  skillTag: {
+    backgroundColor: "#F7FAFC",
+    paddingVertical: 2,
+    paddingHorizontal: 6,
+    marginRight: 4,
+    marginBottom: 3,
+    fontSize: 8,
+    color: "#2D3748",
+    borderWidth: 1,
+    borderColor: "#E2E8F0",
+  },
+
+  // Work Experience
+  workHeader: {
+    marginBottom: 10,
+  },
+  workDateRange: {
+    fontSize: 9,
+    color: "#718096",
+    marginBottom: 3,
+  },
+  workTitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  workTitle: {
+    fontSize: 11,
+    fontWeight: "bold",
+    color: "#1A202C",
+    fontFamily: "Helvetica-Bold",
+  },
+  workCompany: {
+    fontSize: 11,
+    color: "#718096",
+    marginLeft: 6,
+  },
+  coreResponsibility: {
+    fontSize: 9,
+    color: "#4A5568",
+    marginTop: 8,
+    marginBottom: 12,
+    fontStyle: "italic",
+    lineHeight: 1.4,
+  },
+
+  // Project Items
+  projectItem: {
+    marginBottom: 12,
+    marginTop: 15,
+    paddingLeft: 10,
+    borderLeftWidth: 2,
+    borderLeftColor: "#E2E8F0",
+  },
+  projectHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 4,
+  },
+  projectNumber: {
+    fontSize: 9,
+    color: "#2D3748",
+    fontFamily: "Helvetica-Bold",
+    marginRight: 4,
+  },
+  projectTitle: {
+    fontSize: 10,
+    fontWeight: "bold",
+    color: "#1A202C",
+    fontFamily: "Helvetica-Bold",
+  },
+  roleText: {
+    fontSize: 8,
+    color: "#718096",
+    marginBottom: 4,
+    fontStyle: "italic",
+  },
+  bulletItem: {
+    flexDirection: "row",
+    marginBottom: 2,
+  },
+  bulletPoint: {
+    width: 10,
+    fontSize: 8,
+    color: "#4A5568",
+  },
+  bulletText: {
+    flex: 1,
+    fontSize: 8,
+    color: "#4A5568",
+    lineHeight: 1.4,
+  },
+  boldText: {
+    fontFamily: "Helvetica-Bold",
+    color: "#1A202C",
+  },
+
+  // Footer
+  footer: {
+    position: "absolute",
+    bottom: 15,
+    right: 30,
+    fontSize: 7,
+    color: "#A0AEC0",
   },
 });
 
@@ -133,130 +252,358 @@ interface ResumePDFProps {
   locale?: "en" | "vi";
 }
 
-const ResumePDF: React.FC<ResumePDFProps> = ({ locale = "en" }) => {
-  // CV content is always in English regardless of website language
-  const translations = require("../../../public/locales/en.json");
-
+const ResumePDF: React.FC<ResumePDFProps> = () => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {/* Header */}
+        {/* ==================== HEADER (Dark Background) ==================== */}
         <View style={styles.header}>
-          <Text style={styles.name}>{translations.name?.fullName || "Thanh Trung Truong"}</Text>
-          <Text style={styles.title}>Full Stack Developer</Text>
-          <View style={styles.contactInfo}>
-            <Text style={styles.contactItem}>Email: thanhtrung.1010.2k@gmail.com</Text>
-            <Text style={styles.contactItem}>Phone: 0948 868 324</Text>
-            <Text style={styles.contactItem}>GitHub: github.com/dev-to2k</Text>
-            <Text style={styles.contactItem}>LinkedIn: linkedin.com/in/dev-to2k</Text>
+          {/* Avatar */}
+          <View style={styles.avatarContainer}>
+            <Image
+              style={styles.avatar}
+              src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/480703369_1486149359007485_633522227972454199_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHNfu4K7v_6e84GRYVzofUyoyaSlxRrKfejJpKXFGsp90foxMDSnM3xMKSqrMi5VEaWFpEGmoeEK-zzzBF9eBpY&_nc_ohc=VBYEzxLmM-QQ7kNvwFEHwII&_nc_oc=AdlBqbkYwpRneD4FY0ubbyHxzC_HFeFY38FhjhbNV35-zPoeMflt1KaMZW0CzlylkEc&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=ntbKkCmn7O6toc-p2Yuaiw&oh=00_Afq27AQ_QBPQytXvgJQT5VzHP6nRU09cScXEUCJL0BJjhA&oe=695FD392"
+            />
           </View>
-        </View>
-
-        {/* Professional Summary */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Professional Summary</Text>
-          <Text style={styles.description}>
-            Results-driven Full Stack Developer with 3+ years of experience building scalable web applications and enterprise systems. 
-            Specialized in ReactJS, Next.js, Java Spring Boot, and modern JavaScript frameworks. Proven expertise in developing 
-            high-performance e-commerce platforms and complex business management systems. Proficient in leveraging AI-powered 
-            development tools (Cursor, Windsurf, GitHub Copilot) to accelerate development cycles and deliver robust solutions. 
-            Strong background in microservices architecture, RESTful APIs, and cloud-based deployments.
-          </Text>
-        </View>
-
-        {/* Work Experience */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Work Experience</Text>
-          
-          {/* Generali */}
-          <View style={styles.experienceItem}>
-            <View style={styles.experienceHeader}>
-              <Text style={styles.companyName}>Generali</Text>
-              <Text style={styles.date}>Mar 2024 - Present</Text>
-            </View>
-            <Text style={styles.role}>Full Stack Developer</Text>
-            <View style={{ marginTop: 5 }}>
-              <Text style={styles.description}>• Architected and developed a comprehensive agent lifecycle management system, handling profile registration, status transitions, and automated workflow processes</Text>
-              <Text style={styles.description}>• Implemented robust security measures using JWT authentication and role-based access control (RBAC) to ensure data integrity and compliance</Text>
-              <Text style={styles.description}>• Designed and optimized bulk data processing functionality, enabling efficient handling of large-scale data imports with validation and error handling</Text>
-              <Text style={styles.description}>• Engineered a scalable email notification service with dynamic template engine, supporting multi-language and personalized communications</Text>
-              <Text style={styles.description}>• Containerized applications using Docker, streamlining deployment processes and ensuring consistent environments across development and production</Text>
-              <Text style={styles.description}>• Collaborated with cross-functional teams to deliver high-quality software solutions, following Agile methodologies and best practices</Text>
-            </View>
-            <View style={styles.skillsList}>
-              <Text style={styles.skillTag}>Java Spring Boot</Text>
-              <Text style={styles.skillTag}>Angular</Text>
-              <Text style={styles.skillTag}>Kafka</Text>
-              <Text style={styles.skillTag}>MSSQL SP</Text>
-              <Text style={styles.skillTag}>Oracle</Text>
-            </View>
-          </View>
-
-          {/* Portal Craft */}
-          <View style={styles.experienceItem}>
-            <View style={styles.experienceHeader}>
-              <Text style={styles.companyName}>Portal Craft</Text>
-              <Text style={styles.date}>May 2022 - Feb 2024</Text>
-            </View>
-            <Text style={styles.role}>Frontend Developer (Remote)</Text>
-            <View style={{ marginTop: 5 }}>
-              <Text style={styles.description}>• Developed and maintained Co-bee e-commerce application with seamless Lazada marketplace integration, enabling real-time product synchronization and order management</Text>
-              <Text style={styles.description}>• Built responsive Co-hoot e-commerce platform with advanced shopping cart features, payment gateway integration, and user-friendly checkout experience</Text>
-              <Text style={styles.description}>• Designed and implemented innovative "Buy Together" group purchasing feature, increasing user engagement and sales conversion rates</Text>
-              <Text style={styles.description}>• Optimized application performance through code refactoring, lazy loading, and efficient state management, improving page load times by 40%</Text>
-              <Text style={styles.description}>• Collaborated effectively in a fully remote, distributed team environment, utilizing modern communication tools and version control systems</Text>
-            </View>
-            <View style={styles.skillsList}>
-              <Text style={styles.skillTag}>ReactJS</Text>
-              <Text style={styles.skillTag}>Node.js</Text>
-              <Text style={styles.skillTag}>Lazada API</Text>
-            </View>
-          </View>
-        </View>
-
-        {/* Projects */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Featured Projects</Text>
-          
-          <View style={styles.projectItem}>
-            <Text style={styles.projectTitle}>EDM Agent Management System</Text>
-            <Text style={styles.description}>
-              Comprehensive system for managing agent profile movements and lifecycles with high-performance and security.
+          {/* Header Info */}
+          <View style={styles.headerInfo}>
+            <Text style={styles.name}>Thanh Trung Truong</Text>
+            <Text style={styles.jobTitle}>
+              FULL-STACK DEVELOPER (Frontend Specialist)
             </Text>
-            <Text style={styles.techStack}>Tech: Spring Boot, Angular, Kafka, MSSQL SP, Oracle</Text>
+            <View style={styles.contactRow}>
+              <Text style={styles.contactItem}>0948 868 324</Text>
+              <Text style={styles.contactSeparator}>|</Text>
+              <Text style={styles.contactItem}>
+                thanhtrung.1010.2k@gmail.com
+              </Text>
+              <Text style={styles.contactSeparator}>|</Text>
+              <Text style={styles.contactItem}>Ho Chi Minh City</Text>
+            </View>
+            <View style={styles.contactRow}>
+              <Text style={styles.contactItem}>linkedin.com/in/dev-to2k</Text>
+              <Text style={styles.contactSeparator}>|</Text>
+              <Text style={styles.contactItem}>github.com/dev-to2k</Text>
+            </View>
           </View>
+        </View>
 
-          <View style={styles.projectItem}>
-            <Text style={styles.projectTitle}>Co-bee / Co-hoot E-commerce Platform</Text>
-            <Text style={styles.description}>
-              E-commerce applications with Lazada integration, focusing on group buying features.
+        {/* ==================== BODY ==================== */}
+        <View style={styles.body}>
+          {/* About Me */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>ABOUT ME</Text>
+            <Text style={styles.aboutText}>
+              Versatile{" "}
+              <Text style={styles.boldText}>
+                Full-stack Developer (Frontend Specialist)
+              </Text>{" "}
+              with nearly 4 years of experience. Passionate about building
+              high-quality{" "}
+              <Text style={styles.boldText}>Software Products</Text> and
+              adhering to <Text style={styles.boldText}>Best Practices</Text> in{" "}
+              <Text style={styles.boldText}>
+                Object-Oriented Design Patterns
+              </Text>
+              . Proven <Text style={styles.boldText}>Communication</Text> skills
+              in <Text style={styles.boldText}>Agile</Text> environments,
+              collaborating with teams to resolve{" "}
+              <Text style={styles.boldText}>Issues</Text> and ensure{" "}
+              <Text style={styles.boldText}>Web Security</Text>. Committed to
+              continuous learning in <Text style={styles.boldText}>Cloud</Text>{" "}
+              and <Text style={styles.boldText}>Backend</Text> technologies.{" "}
+              <Text style={styles.boldText}>
+                Expert in AI-augmented engineering, proven by accelerating an
+                8-month enterprise project (EDM) to completion in just 3 months
+                (over 60% faster) without compromising code stability or
+                security.
+              </Text>
             </Text>
-            <Text style={styles.techStack}>Tech: ReactJS, Node.js, Lazada API</Text>
+          </View>
+
+          {/* Education */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>EDUCATION</Text>
+            <View style={styles.educationItem}>
+              <Text style={styles.schoolName}>Nguyen Tat Thanh University</Text>
+              <Text style={styles.educationDetails}>
+                2018 - 2023 | Bachelor of Information Technology
+              </Text>
+              <Text style={styles.educationDetails}>
+                Relevant Coursework: Object-Oriented Programming (Java),
+                Advanced Database Systems (SQL/Stored Procedures), Data
+                Structures & Algorithms, Advanced Web Technologies.
+              </Text>
+            </View>
+          </View>
+
+          {/* Skills */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>SKILLS</Text>
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>Excellent</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>React (ReactJS)</Text>
+                <Text style={styles.skillTag}>Angular</Text>
+                <Text style={styles.skillTag}>Next.js</Text>
+                <Text style={styles.skillTag}>TypeScript</Text>
+                <Text style={styles.skillTag}>Lazy Loading</Text>
+                <Text style={styles.skillTag}>Performance Optimization</Text>
+                <Text style={styles.skillTag}>Front-End Best Practices</Text>
+                <Text style={styles.skillTag}>UI/UX Implementation</Text>
+                <Text style={styles.skillTag}>Rapid Prototyping</Text>
+              </View>
+            </View>
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>Intermediate</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>Java</Text>
+                <Text style={styles.skillTag}>Spring Boot</Text>
+                <Text style={styles.skillTag}>Spring MVC</Text>
+                <Text style={styles.skillTag}>Spring Security</Text>
+                <Text style={styles.skillTag}>Spring Data</Text>
+                <Text style={styles.skillTag}>ORM (Hibernate, JPA)</Text>
+                <Text style={styles.skillTag}>REST API</Text>
+                <Text style={styles.skillTag}>SQL</Text>
+                <Text style={styles.skillTag}>T-SQL</Text>
+              </View>
+            </View>
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>Process & Tools</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>Unit Testing (JUnit)</Text>
+                <Text style={styles.skillTag}>Git</Text>
+                <Text style={styles.skillTag}>CI/CD</Text>
+                <Text style={styles.skillTag}>Scrum/Agile</Text>
+                <Text style={styles.skillTag}>GitHub Copilot</Text>
+                <Text style={styles.skillTag}>Cursor IDE</Text>
+              </View>
+            </View>
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>Basic Knowledge</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>Microservices</Text>
+                <Text style={styles.skillTag}>Docker</Text>
+              </View>
+            </View>
+          </View>
+
+          {/* Work Experience */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>WORK EXPERIENCE</Text>
+
+            <View style={styles.workHeader}>
+              <Text style={styles.workDateRange}>05/2025 - PRESENT</Text>
+              <View style={styles.workTitleRow}>
+                <Text style={styles.workTitle}>FULL-STACK DEVELOPER</Text>
+                <Text style={styles.workCompany}>
+                  | Generali Vietnam (Via Partner)
+                </Text>
+              </View>
+            </View>
+
+            <Text style={styles.coreResponsibility}>
+              Core Responsibility: Key Member in the onsite development team,
+              participating in delivery of Greenfield Enterprise Applications.
+              Collaborated with the Solution Architect to implement solutions
+              following team standards.
+            </Text>
+            <View style={styles.bulletItem} wrap={false}>
+              <Text style={styles.bulletPoint}>•</Text>
+              <Text style={styles.bulletText}>
+                <Text style={styles.boldText}>AI-Driven Optimization:</Text>{" "}
+                Implemented an AI-assisted development workflow using{" "}
+                <Text style={styles.boldText}>Cursor & Copilot</Text>, which{" "}
+                <Text style={styles.boldText}>
+                  reduced average coding time per task by 40%,
+                </Text>{" "}
+                allowing the team to focus on complex architecture logic.
+              </Text>
+            </View>
+            <View style={styles.bulletItem} wrap={false}>
+              <Text style={styles.bulletPoint}>•</Text>
+              <Text style={styles.bulletText}>
+                <Text style={styles.boldText}>Quality & Process:</Text> Follow{" "}
+                <Text style={styles.boldText}>Secure Coding</Text> principles to
+                prevent <Text style={styles.boldText}>Web Security</Text>{" "}
+                vulnerabilities.
+              </Text>
+            </View>
+
+            {/* Project 1: Sales Activity */}
+            <View style={styles.projectItem}>
+              <View style={styles.projectHeader}>
+                <Text style={styles.projectNumber}>1.</Text>
+                <Text style={styles.projectTitle}>
+                  Sales Activity Management System
+                </Text>
+              </View>
+              <Text style={styles.roleText}>
+                Role: Full-stack Developer (Frontend Heavy)
+              </Text>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Frontend Architecture:</Text>{" "}
+                  Designed a scalable Dashboard using Next.js (App Router).
+                  Implemented <Text style={styles.boldText}>Lazy Loading</Text>{" "}
+                  and <Text style={styles.boldText}>Dynamic Imports</Text> to
+                  optimize bundle size. Followed official{" "}
+                  <Text style={styles.boldText}>Best Practices</Text> for
+                  component reusability and maintainability.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Backend Implementation:</Text>{" "}
+                  Implemented Java Spring Boot APIs to handle Agent KPIs and
+                  Activity tracking. Integrated standard RESTful endpoints
+                  following the clean architecture defined by the Solution
+                  Architect.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Kafka Integration:</Text>{" "}
+                  Integrated Apache Kafka consumers to receive and process
+                  asynchronous data updates from Core systems, ensuring data
+                  accuracy.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Technologies:</Text> Java,
+                  Spring Boot (MVC, Security), Next.js, Kafka, Oracle.
+                </Text>
+              </View>
+            </View>
+
+            {/* Project 2: EDM */}
+            <View style={styles.projectItem}>
+              <View style={styles.projectHeader}>
+                <Text style={styles.projectNumber}>2.</Text>
+                <Text style={styles.projectTitle}>
+                  Enterprise Document Management (EDM)
+                </Text>
+              </View>
+              <Text style={styles.roleText}>
+                Role: Full-stack Developer (Frontend Focus)
+              </Text>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Rapid Delivery Milestone:</Text>{" "}
+                  Successfully delivered the end-to-end module{" "}
+                  <Text style={styles.boldText}>
+                    5 months ahead of schedule
+                  </Text>{" "}
+                  (3 months actual vs. 8 months planned) through AI-driven
+                  development.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>End-to-End Delivery:</Text>{" "}
+                  Leveraged AI tools to rapidly prototype complex{" "}
+                  <Text style={styles.boldText}>Angular</Text> UI and automate{" "}
+                  <Text style={styles.boldText}>Java Spring Boot</Text>{" "}
+                  persistence layers, ensuring seamless integration with{" "}
+                  <Text style={styles.boldText}>SQL Server</Text>.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Outcome:</Text> The system was
+                  highly stable upon launch, handling large-scale data
+                  validation and bulk uploads with zero critical defects during
+                  the early delivery phase.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Technologies:</Text> Java,
+                  Spring Data JPA, Angular, SQL Server (T-SQL).
+                </Text>
+              </View>
+            </View>
+
+            {/* Project 3: Quotation */}
+            <View style={styles.projectItem}>
+              <View style={styles.projectHeader}>
+                <Text style={styles.projectNumber}>3.</Text>
+                <Text style={styles.projectTitle}>Quotation System</Text>
+              </View>
+              <Text style={styles.roleText}>Role: Frontend Developer</Text>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Responsibility:</Text> Developed
+                  Dynamic Form Interfaces using Angular & RxJS. Applied{" "}
+                  <Text style={styles.boldText}>Strict Typing</Text> and{" "}
+                  <Text style={styles.boldText}>Reactive Programming</Text>{" "}
+                  principles to handle complex async validations and guarantee
+                  real-time data consistency.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Technologies:</Text> Angular,
+                  RxJS, HTML5/CSS3, Figma.
+                </Text>
+              </View>
+            </View>
+
+            {/* Previous Job: Remote Frontend */}
+            <View style={styles.workHeader}>
+              <Text style={styles.workDateRange}>04/2022 - 01/2025</Text>
+              <View style={styles.workTitleRow}>
+                <Text style={styles.workTitle}>FRONTEND DEVELOPER</Text>
+                <Text style={styles.workCompany}>
+                  | Remote / Freelance Projects
+                </Text>
+              </View>
+            </View>
+
+            <View style={styles.projectItem}>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Developed responsive web applications for international
+                  clients using ReactJS ecosystem. Collaborated with remote
+                  teams via Git/Jira to deliver pixel-perfect UI from Figma
+                  designs.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Optimized frontend performance and built reusable component
+                  libraries.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Technologies:</Text> ReactJS,
+                  Redux, HTML5, CSS3, RESTful APIs, Git.
+                </Text>
+              </View>
+            </View>
           </View>
         </View>
 
-        {/* Skills */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Technical Skills</Text>
-          <View style={styles.skillsList}>
-            <Text style={styles.skillTag}>ReactJS</Text>
-            <Text style={styles.skillTag}>Next.js</Text>
-            <Text style={styles.skillTag}>TypeScript</Text>
-            <Text style={styles.skillTag}>Java Spring Boot</Text>
-            <Text style={styles.skillTag}>Angular</Text>
-            <Text style={styles.skillTag}>Node.js</Text>
-            <Text style={styles.skillTag}>Kafka</Text>
-            <Text style={styles.skillTag}>Oracle</Text>
-            <Text style={styles.skillTag}>Docker</Text>
-            <Text style={styles.skillTag}>Tailwind CSS</Text>
-            <Text style={styles.skillTag}>Git</Text>
-            <Text style={styles.skillTag}>AI DevTools</Text>
-          </View>
-        </View>
+        {/* Footer */}
+        <Text style={styles.footer}>Page 1/1</Text>
       </Page>
     </Document>
   );
 };
 
 export default ResumePDF;
-

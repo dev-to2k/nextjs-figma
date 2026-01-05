@@ -16,10 +16,10 @@
     "titleLine2": "by its",
     "titleHighlight": "cover...",
     "caption": "BECAUSE IF THE COVER DOES NOT IMPRESS YOU WHAT ELSE CAN?",
-    "role": "I'm a Software Engineer.",
-    "currentRole": "Currently, I'm a Software Engineer at",
-    "company": "Facebook",
-    "description": "A self-taught UI/UX designer, functioning in the industry for 3+ years now. I make meaningful and delightful digital products that create an equilibrium between user needs and business goals.",
+    "role": "I'm a Full-stack Developer (Frontend Specialist).",
+    "currentRole": "Currently, I'm a Full-stack Developer at",
+    "company": "Generali Vietnam",
+    "description": "Expert in AI-augmented engineering, proven by accelerating an 8-month enterprise project to completion in just 3 months (over 60% faster).",
     "aiTools": "I leverage AI development tools to enhance productivity and code quality",
     "aiToolsDescription": "Proficient in using <strong class=\"text-purple-400\">Cursor</strong>, <strong class=\"text-blue-400\">Windsurf</strong>, and <strong class=\"text-green-400\">GitHub Copilot</strong> to accelerate development workflows and deliver high-quality solutions."
   },
@@ -45,25 +45,41 @@
     }
   },
   "edmAgent": {
-    "title": "EDM Agent",
-    "company": "Generali",
-    "date": "Mar 2024 - Present",
-    "team": "Team: 4",
-    "role": "Role: Fullstack",
-    "description": "A comprehensive system for managing agent profile movements and lifecycles. Handles profile registration and full lifecycle management including code generation, promotion, demotion, withdrawal, and suspension. Built with high-performance and security in mind.",
+    "title": "Sales Activity Management System",
+    "company": "Generali Vietnam",
+    "date": "Jun 2023 - Present",
+    "team": "Team: 5+",
+    "role": "Role: Lead Developer",
+    "description": "A centralized microservices system managing sales KPIs and agent performance for thousands of users. Focus on Scalability & Real-time Processing using Next.js SSR and Apache Kafka integration.",
     "details": {
-      "point1": "Built a comprehensive system for managing <strong>agent movement</strong> and lifecycles, ensuring accurate tracking of status changes.",
-      "point2": "Secured the application with <strong>JWT</strong> authentication and granular <strong>permission</strong> management to ensure data integrity.",
-      "point3": "Implemented <strong>bulk upload</strong> functionality to process large volumes of agent data efficiently.",
-      "point4": "Developed a robust <strong>email service</strong> with dynamic <strong>template</strong> support for automated system notifications.",
-      "point5": "Utilized <strong>Docker</strong> for containerization, ensuring consistent deployment across development and production environments.",
-      "point6": "Integrated <strong class=\"text-zinc-300\">Spring Boot</strong>, <strong class=\"text-zinc-300\">Angular</strong>, <strong class=\"text-zinc-300\">Kafka</strong>, <strong class=\"text-zinc-300\">MSSQL Stored Procedures</strong>, and <strong class=\"text-zinc-300\">Oracle</strong> (for system permission page, action, user, role) to deliver high performance and reliability."
+      "point1": "<strong>Frontend Architecture:</strong> Designed a scalable Dashboard using <strong>Next.js (App Router)</strong>. Implemented <strong>Lazy Loading</strong> and <strong>Dynamic Imports</strong> to optimize bundle size.",
+      "point2": "<strong>Backend Implementation:</strong> Implemented <strong>Java Spring Boot APIs</strong> to handle Agent KPIs and Activity tracking. Integrated standard RESTful endpoints following clean architecture.",
+      "point3": "<strong>Kafka Integration:</strong> Integrated <strong>Apache Kafka</strong> consumers to receive and process asynchronous data updates from Core systems, ensuring data accuracy.",
+      "point4": "<strong>Best Practices:</strong> Followed official Best Practices for component reusability and maintainability.",
+      "point5": "<strong>Technologies:</strong> Java, Spring Boot (MVC, Security), Next.js, Kafka, Oracle.",
+      "point6": "<strong>Impact:</strong> Reduced Initial Load Time by <strong>40%</strong> compared to legacy CSR solutions."
+    }
+  },
+  "edmProject": {
+    "title": "Enterprise Document Management (EDM)",
+    "company": "Generali Vietnam",
+    "date": "Jun 2023 - Present",
+    "team": "Team: 4",
+    "role": "Role: Core System Builder",
+    "description": "A secure document management system delivered <strong>5 months ahead of schedule</strong> (3 months vs 8 months) using AI-driven workflow.",
+    "details": {
+      "point1": "<strong>Rapid Delivery Milestone:</strong> Successfully delivered the end-to-end module <strong>5 months ahead of schedule</strong> (3 months actual vs. 8 months planned) through AI-driven development.",
+      "point2": "<strong>End-to-End Delivery:</strong> Leveraged AI tools to rapidly prototype complex <strong>Angular</strong> UI and automate <strong>Java Spring Boot</strong> persistence layers.",
+      "point3": "<strong>Stability:</strong> The system was highly stable upon launch, handling large-scale data validation with zero critical defects.",
+      "point4": "<strong>Frontend:</strong> Designed complex Dynamic Forms using Angular & RxJS, ensuring strict client-side validation.",
+      "point5": "<strong>Backend Integration:</strong> Implemented REST API using Spring Data JPA and Hibernate to handle data persistence efficiently.",
+      "point6": "<strong>Tech Stack:</strong> Java Spring Boot, Angular, Oracle DB (Stored Procedures), JWT & Encryption."
     }
   },
   "workExperience": {
     "title": "Work Experience",
     "learnMore": "LEARN MORE",
-    "bottomText": "Started my developer journey in <strong class=\"text-purple-400\">2022</strong>, with <strong class=\"text-blue-400\">3 years of remote frontend development</strong> specializing in <strong class=\"text-cyan-400\">ReactJS</strong>. Recently joined as a <strong class=\"text-green-500\">full-stack developer</strong> with <strong class=\"text-green-500\">Java backend</strong>, working onsite to expand my expertise across the entire stack.",
+    "bottomText": "Started my developer journey in <strong class=\"text-purple-400\">2022</strong>, with <strong class=\"text-blue-400\">experience in remote frontend development</strong> specializing in <strong class=\"text-cyan-400\">ReactJS</strong>. Currently working as a <strong class=\"text-green-500\">Full-stack Developer</strong> at <strong class=\"text-green-500\">Generali Vietnam</strong>, building enterprise-grade applications with <strong class=\"text-red-400\">Java Spring Boot</strong> and <strong class=\"text-blue-400\">Next.js, Angular</strong>.",
     "techStackTitle": "My Tech Stack",
     "addressLabel": "Office Location",
     "address": "43-45 Tú Xương, Võ Thị Sáu Ward, District 3, Ho Chi Minh City 700000",
