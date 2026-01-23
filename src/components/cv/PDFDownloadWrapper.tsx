@@ -24,13 +24,11 @@ export default function PDFDownloadWrapper({
     <PDFDownloadLink
       document={<ResumePDF locale={locale} />}
       fileName={`CV_${new Date().getFullYear()}.pdf`}
-      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium transition-all hover:scale-105 shadow-lg shadow-purple-500/50"
+      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-medium text-sm transition-all"
       onClick={() => setIsGenerating(true)}
     >
       {({ loading }: { loading: boolean }) => {
-        // Reset isGenerating when loading completes (changes from true to false)
         if (prevLoadingRef.current && !loading) {
-          // Use setTimeout to avoid state update during render
           setTimeout(() => setIsGenerating(false), 0);
         }
         prevLoadingRef.current = loading;

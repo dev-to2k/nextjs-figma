@@ -1,13 +1,14 @@
-import FeaturedProjects from "@/components/landing/FeaturedProjects";
-import Footer from "@/components/landing/Footer";
-import Header from "@/components/landing/Header";
-import Hero from "@/components/landing/Hero";
-import ScrollToTop from "@/components/landing/ScrollToTop";
-import WorkExperience from "@/components/landing/WorkExperience";
+import dynamic from 'next/dynamic';
+const FeaturedProjects = dynamic(() => import('@/components/landing/FeaturedProjects'), { ssr: true });
+const Footer = dynamic(() => import('@/components/landing/Footer'), { ssr: true });
+const Header = dynamic(() => import('@/components/landing/Header'), { ssr: true });
+const Hero = dynamic(() => import('@/components/landing/Hero'), { ssr: true });
+const ScrollToTop = dynamic(() => import('@/components/landing/ScrollToTop'), { ssr: false });
+const WorkExperience = dynamic(() => import('@/components/landing/WorkExperience'), { ssr: true });
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans selection:bg-purple-500/20 dark:selection:bg-purple-500/30 transition-colors duration-500 ease-in-out bg-[#fafafa] text-zinc-800 dark:bg-[#050505] dark:text-zinc-100">
+    <div className="min-h-screen font-sans selection:bg-primary/30">
       <Header />
       <main>
         <Hero />

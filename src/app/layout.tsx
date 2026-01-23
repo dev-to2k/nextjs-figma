@@ -94,6 +94,26 @@ export default function RootLayout({
             <SmoothScroll>{children}</SmoothScroll>
           </TranslationProvider>
         </ThemeProvider>
+        {/* SEO JSON-LD structured data for better search visibility */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://your-domain.com",
+            "name": "Thanh Trung Truong | Full Stack Developer",
+          }) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Thanh Trung Truong",
+            "url": "https://your-domain.com",
+            "logo": "https://your-domain.com/logo.png",
+          }) }}
+        />
       </body>
     </html>
   );

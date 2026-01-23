@@ -27,29 +27,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TechBadge = ({ name }: { name: string }) => {
   const getIcon = (techName: string) => {
-    switch (techName) {
+  switch (techName) {
       case "Java Spring Boot":
-        return <SiSpringboot className="text-green-500" />;
+        return <SiSpringboot className="text-primary/70" />;
       case "Angular":
-        return <SiAngular className="text-red-500" />;
+        return <SiAngular className="text-primary/60" />;
       case "Kafka":
-        return <SiApachekafka className="text-white" />;
+        return <SiApachekafka className="text-foreground/80" />;
       case "MSSQL Stored Procedures":
-        return <DiMsqlServer className="text-blue-500" />;
+        return <DiMsqlServer className="text-primary/50" />;
       case "Oracle":
-        return <SiOracle className="text-red-600" />;
+        return <SiOracle className="text-primary/65" />;
       case "JWT & Encryption":
-        return <SiJsonwebtokens className="text-pink-500" />;
+        return <SiJsonwebtokens className="text-foreground/70" />;
       case "Bootstrap":
-        return <SiBootstrap className="text-purple-600" />;
+        return <SiBootstrap className="text-primary/55" />;
       case "React":
-        return <SiReact className="text-blue-400" />;
+        return <SiReact className="text-primary/65" />;
       case "Tailwind CSS":
-        return <SiTailwindcss className="text-cyan-400" />;
+        return <SiTailwindcss className="text-primary/75" />;
       case "Next.js":
-        return <SiNextdotjs className="text-white" />;
+        return <SiNextdotjs className="text-foreground" />;
       case "TypeScript":
-        return <SiTypescript className="text-blue-500" />;
+        return <SiTypescript className="text-primary/70" />;
       case "Framer Motion":
         return <SiFramer className="text-purple-500" />;
       case "Node.js":

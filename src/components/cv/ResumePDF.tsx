@@ -7,6 +7,7 @@ import {
   View,
 } from "@react-pdf/renderer";
 import React from "react";
+import { CONTACT, PERSONAL } from "@/constants/contact";
 
 // Modern Professional CV - ITViec Style
 const styles = StyleSheet.create({
@@ -267,23 +268,23 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
           </View>
           {/* Header Info */}
           <View style={styles.headerInfo}>
-            <Text style={styles.name}>Thanh Trung Truong</Text>
+            <Text style={styles.name}>{PERSONAL.fullName}</Text>
             <Text style={styles.jobTitle}>
-              FULL-STACK DEVELOPER (Frontend Specialist)
+              {PERSONAL.jobTitle}
             </Text>
             <View style={styles.contactRow}>
-              <Text style={styles.contactItem}>0948 868 324</Text>
+              <Text style={styles.contactItem}>{CONTACT.phone}</Text>
               <Text style={styles.contactSeparator}>|</Text>
               <Text style={styles.contactItem}>
-                thanhtrung.1010.2k@gmail.com
+                {CONTACT.email}
               </Text>
               <Text style={styles.contactSeparator}>|</Text>
-              <Text style={styles.contactItem}>Ho Chi Minh City</Text>
+              <Text style={styles.contactItem}>{CONTACT.location}</Text>
             </View>
             <View style={styles.contactRow}>
-              <Text style={styles.contactItem}>linkedin.com/in/dev-to2k</Text>
+              <Text style={styles.contactItem}>{CONTACT.linkedinDisplay}</Text>
               <Text style={styles.contactSeparator}>|</Text>
-              <Text style={styles.contactItem}>github.com/dev-to2k</Text>
+              <Text style={styles.contactItem}>{CONTACT.githubDisplay}</Text>
             </View>
           </View>
         </View>
@@ -295,29 +296,21 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
             <Text style={styles.sectionTitle}>ABOUT ME</Text>
             <Text style={styles.aboutText}>
               Versatile{" "}
-              <Text style={styles.boldText}>
-                Full-stack Developer (Frontend Specialist)
-              </Text>{" "}
-              with nearly 4 years of experience. Passionate about building
-              high-quality{" "}
-              <Text style={styles.boldText}>Software Products</Text> and
-              adhering to <Text style={styles.boldText}>Best Practices</Text> in{" "}
-              <Text style={styles.boldText}>
-                Object-Oriented Design Patterns
-              </Text>
-              . Proven <Text style={styles.boldText}>Communication</Text> skills
-              in <Text style={styles.boldText}>Agile</Text> environments,
-              collaborating with teams to resolve{" "}
-              <Text style={styles.boldText}>Issues</Text> and ensure{" "}
-              <Text style={styles.boldText}>Web Security</Text>. Committed to
-              continuous learning in <Text style={styles.boldText}>Cloud</Text>{" "}
-              and <Text style={styles.boldText}>Backend</Text> technologies.{" "}
-              <Text style={styles.boldText}>
-                Expert in AI-augmented engineering, proven by accelerating an
-                8-month enterprise project (EDM) to completion in just 3 months
-                (over 60% faster) without compromising code stability or
-                security.
-              </Text>
+              <Text style={styles.boldText}>Full-stack Developer</Text> with a
+              strong <Text style={styles.boldText}>product mindset</Text>.
+              Proven ability to adapt rapidly to new technologies (rapidly
+              attained proficiency in{" "}
+              <Text style={styles.boldText}>Angular/Kafka</Text> from scratch
+              within months). Passionate about{" "}
+              <Text style={styles.boldText}>Performance Optimization</Text> and
+              delivering{" "}
+              <Text style={styles.boldText}>high-quality user experiences</Text>
+              . Expert in leveraging{" "}
+              <Text style={styles.boldText}>AI tools (Cursor, Copilot)</Text> to
+              accelerate development speed by{" "}
+              <Text style={styles.boldText}>40-60%</Text> while maintaining code
+              quality and{" "}
+              <Text style={styles.boldText}>security standards</Text>.
             </Text>
           </View>
 
@@ -393,7 +386,7 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
             <Text style={styles.sectionTitle}>WORK EXPERIENCE</Text>
 
             <View style={styles.workHeader}>
-              <Text style={styles.workDateRange}>05/2025 - PRESENT</Text>
+              <Text style={styles.workDateRange}>01/2025 - PRESENT</Text>
               <View style={styles.workTitleRow}>
                 <Text style={styles.workTitle}>FULL-STACK DEVELOPER</Text>
                 <Text style={styles.workCompany}>
@@ -438,38 +431,61 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
                   Sales Activity Management System
                 </Text>
               </View>
-              <Text style={styles.roleText}>
-                Role: Full-stack Developer (Frontend Heavy)
-              </Text>
+              <Text style={styles.roleText}>Role: Full-stack Developer</Text>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Frontend Architecture:</Text>{" "}
-                  Designed a scalable Dashboard using Next.js (App Router).
-                  Implemented <Text style={styles.boldText}>Lazy Loading</Text>{" "}
-                  and <Text style={styles.boldText}>Dynamic Imports</Text> to
-                  optimize bundle size. Followed official{" "}
-                  <Text style={styles.boldText}>Best Practices</Text> for
-                  component reusability and maintainability.
+                  <Text style={styles.boldText}>Performance Optimization:</Text>{" "}
+                  Implemented{" "}
+                  <Text style={styles.boldText}>
+                    Route-level Code Splitting
+                  </Text>{" "}
+                  and <Text style={styles.boldText}>Lazy Loading</Text> for the
+                  Notification List component to significantly reduce the
+                  initial bundle size and improve page load speed.
                 </Text>
               </View>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Backend Implementation:</Text>{" "}
-                  Implemented Java Spring Boot APIs to handle Agent KPIs and
-                  Activity tracking. Integrated standard RESTful endpoints
-                  following the clean architecture defined by the Solution
-                  Architect.
+                  <Text style={styles.boldText}>Quality Assurance:</Text>{" "}
+                  Applied{" "}
+                  <Text style={styles.boldText}>
+                    Production Build Best Practices
+                  </Text>{" "}
+                  (Tree-shaking, Minification) and resolved{" "}
+                  <Text style={styles.boldText}>Render-blocking resources</Text>{" "}
+                  identified via Lighthouse analysis.
                 </Text>
               </View>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Kafka Integration:</Text>{" "}
-                  Integrated Apache Kafka consumers to receive and process
-                  asynchronous data updates from Core systems, ensuring data
-                  accuracy.
+                  <Text style={styles.boldText}>
+                    Event-Driven Notification System:
+                  </Text>{" "}
+                  Designed a{" "}
+                  <Text style={styles.boldText}>decoupling architecture</Text>{" "}
+                  using Apache Kafka to handle bulk internal notifications.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Mechanism:</Text> Offloaded
+                  heavy batch processing from the Job Scheduler by pushing{" "}
+                  <Text style={styles.boldText}>10,000+ events</Text> to Kafka
+                  topics instantly.
+                </Text>
+              </View>
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Reliability:</Text> Implemented
+                  Consumers to process messages{" "}
+                  <Text style={styles.boldText}>asynchronously</Text> (template
+                  rendering & SQL persistence), preventing database congestion
+                  during peak broadcast times.
                 </Text>
               </View>
               <View style={styles.bulletItem} wrap={false}>
@@ -490,18 +506,21 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
                 </Text>
               </View>
               <Text style={styles.roleText}>
-                Role: Full-stack Developer (Frontend Focus)
+                Role: Full-stack Developer
               </Text>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Rapid Delivery Milestone:</Text>{" "}
-                  Successfully delivered the end-to-end module{" "}
+                  <Text style={styles.boldText}>Rapid Delivery:</Text> Delivered
+                  the core module{" "}
                   <Text style={styles.boldText}>
                     5 months ahead of schedule
                   </Text>{" "}
-                  (3 months actual vs. 8 months planned) through AI-driven
-                  development.
+                  (3 months actual vs. 8 months planned) by utilizing{" "}
+                  <Text style={styles.boldText}>
+                    AI-driven development workflows
+                  </Text>
+                  , ensuring stability and zero critical defects at launch.
                 </Text>
               </View>
               <View style={styles.bulletItem} wrap={false}>
@@ -539,7 +558,7 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
                 <Text style={styles.projectNumber}>3.</Text>
                 <Text style={styles.projectTitle}>Quotation System</Text>
               </View>
-              <Text style={styles.roleText}>Role: Frontend Developer</Text>
+              <Text style={styles.roleText}>Role: Full-stack Developer</Text>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
@@ -562,7 +581,7 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
 
             {/* Previous Job: Remote Frontend */}
             <View style={styles.workHeader}>
-              <Text style={styles.workDateRange}>04/2022 - 01/2025</Text>
+              <Text style={styles.workDateRange}>04/2022 - 12/2024</Text>
               <View style={styles.workTitleRow}>
                 <Text style={styles.workTitle}>FRONTEND DEVELOPER</Text>
                 <Text style={styles.workCompany}>

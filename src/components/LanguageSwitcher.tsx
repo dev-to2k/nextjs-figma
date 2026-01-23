@@ -6,23 +6,23 @@ export default function LanguageSwitcher() {
   const { locale, setLocale } = useTranslation();
 
   return (
-    <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
+    <div className="flex items-center gap-1 p-1 rounded-lg bg-card border border-border">
       <button
         onClick={() => setLocale("en")}
-        className={`px-3 py-1 rounded text-sm font-medium transition-all ${
+        className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${
           locale === "en"
-            ? "bg-purple-500 text-white"
-            : "text-zinc-400 hover:text-white"
+            ? "bg-primary text-primary-foreground"
+            : "text-muted-foreground hover:text-foreground"
         }`}
       >
         EN
       </button>
       <button
         onClick={() => setLocale("vi")}
-        className={`px-3 py-1 rounded text-sm font-medium transition-all ${
+        className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${
           locale === "vi"
-            ? "bg-purple-500 text-white"
-            : "text-zinc-400 hover:text-white"
+            ? "bg-primary text-primary-foreground"
+            : "text-muted-foreground hover:text-foreground"
         }`}
       >
         VI
