@@ -1,3 +1,4 @@
+import { CONTACT, PERSONAL } from "@/constants/contact";
 import {
   Document,
   Image,
@@ -7,9 +8,8 @@ import {
   View,
 } from "@react-pdf/renderer";
 import React from "react";
-import { CONTACT, PERSONAL } from "@/constants/contact";
 
-// Modern Professional CV - ITViec Style
+// Modern Professional CV - 2026 HR Standard
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 80,
     height: 80,
+    objectFit: "cover",
   },
   headerInfo: {
     flex: 1,
@@ -80,7 +81,6 @@ const styles = StyleSheet.create({
 
   // ================ BODY SECTION ================
   body: {
-    // Padding is now handled by Page
     paddingTop: 10,
   },
 
@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: "#718096",
     marginTop: 2,
+    lineHeight: 1.4,
   },
 
   // Skills
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   skillLevel: {
-    width: 75,
+    width: 85, // Slightly wider to fit "Tools & Others"
     fontSize: 9,
     color: "#1A202C",
     fontWeight: "bold",
@@ -157,12 +158,13 @@ const styles = StyleSheet.create({
 
   // Work Experience
   workHeader: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
   workDateRange: {
     fontSize: 9,
     color: "#718096",
-    marginBottom: 3,
+    marginBottom: 2,
+    fontStyle: "italic",
   },
   workTitleRow: {
     flexDirection: "row",
@@ -176,14 +178,14 @@ const styles = StyleSheet.create({
   },
   workCompany: {
     fontSize: 11,
-    color: "#718096",
+    color: "#4A5568", // Darker gray for better readability
     marginLeft: 6,
   },
   coreResponsibility: {
     fontSize: 9,
     color: "#4A5568",
-    marginTop: 8,
-    marginBottom: 12,
+    marginTop: 4,
+    marginBottom: 10,
     fontStyle: "italic",
     lineHeight: 1.4,
   },
@@ -191,7 +193,7 @@ const styles = StyleSheet.create({
   // Project Items
   projectItem: {
     marginBottom: 12,
-    marginTop: 15,
+    marginTop: 10,
     paddingLeft: 10,
     borderLeftWidth: 2,
     borderLeftColor: "#E2E8F0",
@@ -221,7 +223,7 @@ const styles = StyleSheet.create({
   },
   bulletItem: {
     flexDirection: "row",
-    marginBottom: 2,
+    marginBottom: 3,
   },
   bulletPoint: {
     width: 10,
@@ -230,7 +232,7 @@ const styles = StyleSheet.create({
   },
   bulletText: {
     flex: 1,
-    fontSize: 8,
+    fontSize: 9, // Increased slightly for readability
     color: "#4A5568",
     lineHeight: 1.4,
   },
@@ -261,23 +263,23 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
         <View style={styles.header}>
           {/* Avatar */}
           <View style={styles.avatarContainer}>
+            {/* 
+                IMPORTANT: Replace the source below with your permanent image link (Imgur/Cloudinary/etc).
+                Do NOT use Facebook links as they expire quickly.
+             */}
             <Image
               style={styles.avatar}
-              src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/480703369_1486149359007485_633522227972454199_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHNfu4K7v_6e84GRYVzofUyoyaSlxRrKfejJpKXFGsp90foxMDSnM3xMKSqrMi5VEaWFpEGmoeEK-zzzBF9eBpY&_nc_ohc=VBYEzxLmM-QQ7kNvwFEHwII&_nc_oc=AdlBqbkYwpRneD4FY0ubbyHxzC_HFeFY38FhjhbNV35-zPoeMflt1KaMZW0CzlylkEc&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=ntbKkCmn7O6toc-p2Yuaiw&oh=00_Afq27AQ_QBPQytXvgJQT5VzHP6nRU09cScXEUCJL0BJjhA&oe=695FD392"
+              src="https://via.placeholder.com/150" // <-- REPLACE THIS LINK!
             />
           </View>
           {/* Header Info */}
           <View style={styles.headerInfo}>
             <Text style={styles.name}>{PERSONAL.fullName}</Text>
-            <Text style={styles.jobTitle}>
-              {PERSONAL.jobTitle}
-            </Text>
+            <Text style={styles.jobTitle}>{PERSONAL.jobTitle}</Text>
             <View style={styles.contactRow}>
               <Text style={styles.contactItem}>{CONTACT.phone}</Text>
               <Text style={styles.contactSeparator}>|</Text>
-              <Text style={styles.contactItem}>
-                {CONTACT.email}
-              </Text>
+              <Text style={styles.contactItem}>{CONTACT.email}</Text>
               <Text style={styles.contactSeparator}>|</Text>
               <Text style={styles.contactItem}>{CONTACT.location}</Text>
             </View>
@@ -295,22 +297,13 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>ABOUT ME</Text>
             <Text style={styles.aboutText}>
-              Versatile{" "}
-              <Text style={styles.boldText}>Full-stack Developer</Text> with a
-              strong <Text style={styles.boldText}>product mindset</Text>.
-              Proven ability to adapt rapidly to new technologies (rapidly
-              attained proficiency in{" "}
-              <Text style={styles.boldText}>Angular/Kafka</Text> from scratch
-              within months). Passionate about{" "}
-              <Text style={styles.boldText}>Performance Optimization</Text> and
-              delivering{" "}
-              <Text style={styles.boldText}>high-quality user experiences</Text>
-              . Expert in leveraging{" "}
-              <Text style={styles.boldText}>AI tools (Cursor, Copilot)</Text> to
-              accelerate development speed by{" "}
-              <Text style={styles.boldText}>40-60%</Text> while maintaining code
-              quality and{" "}
-              <Text style={styles.boldText}>security standards</Text>.
+              Full-stack Developer with 3+ years of experience delivering
+              scalable enterprise applications. Proven track record in building
+              high-performance web systems using modern frameworks (React,
+              Angular, Next.js) and robust backends (Java Spring Boot).
+              Specialized in optimizing system performance, event-driven
+              architecture, and delivering complex features ahead of schedule
+              with zero critical defects.
             </Text>
           </View>
 
@@ -323,9 +316,12 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
                 2018 - 2023 | Bachelor of Information Technology
               </Text>
               <Text style={styles.educationDetails}>
-                Relevant Coursework: Object-Oriented Programming (Java),
-                Advanced Database Systems (SQL/Stored Procedures), Data
-                Structures & Algorithms, Advanced Web Technologies.
+                <Text style={styles.boldText}>
+                  Self-taught Angular & Apache Kafka
+                </Text>{" "}
+                within 3 months while balancing university studies and freelance
+                projects. Focus on Advanced Web Technologies and Enterprise
+                System Architecture.
               </Text>
             </View>
           </View>
@@ -333,50 +329,49 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
           {/* Skills */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>SKILLS</Text>
+
             <View style={styles.skillRow}>
-              <Text style={styles.skillLevel}>Excellent</Text>
+              <Text style={styles.skillLevel}>Frontend</Text>
               <View style={styles.skillTags}>
-                <Text style={styles.skillTag}>React (ReactJS)</Text>
-                <Text style={styles.skillTag}>Angular</Text>
-                <Text style={styles.skillTag}>Next.js</Text>
+                <Text style={styles.skillTag}>React / Next.js</Text>
+                <Text style={styles.skillTag}>Angular (v17+)</Text>
                 <Text style={styles.skillTag}>TypeScript</Text>
-                <Text style={styles.skillTag}>Lazy Loading</Text>
+                <Text style={styles.skillTag}>RxJS</Text>
+                <Text style={styles.skillTag}>Tailwind CSS</Text>
                 <Text style={styles.skillTag}>Performance Optimization</Text>
-                <Text style={styles.skillTag}>Front-End Best Practices</Text>
-                <Text style={styles.skillTag}>UI/UX Implementation</Text>
-                <Text style={styles.skillTag}>Rapid Prototyping</Text>
               </View>
             </View>
+
             <View style={styles.skillRow}>
-              <Text style={styles.skillLevel}>Intermediate</Text>
+              <Text style={styles.skillLevel}>Backend</Text>
               <View style={styles.skillTags}>
                 <Text style={styles.skillTag}>Java</Text>
                 <Text style={styles.skillTag}>Spring Boot</Text>
-                <Text style={styles.skillTag}>Spring MVC</Text>
                 <Text style={styles.skillTag}>Spring Security</Text>
-                <Text style={styles.skillTag}>Spring Data</Text>
-                <Text style={styles.skillTag}>ORM (Hibernate, JPA)</Text>
-                <Text style={styles.skillTag}>REST API</Text>
-                <Text style={styles.skillTag}>SQL</Text>
-                <Text style={styles.skillTag}>T-SQL</Text>
+                <Text style={styles.skillTag}>JPA / Hibernate</Text>
+                <Text style={styles.skillTag}>REST API Design</Text>
+                <Text style={styles.skillTag}>SQL Server / Oracle</Text>
               </View>
             </View>
+
             <View style={styles.skillRow}>
-              <Text style={styles.skillLevel}>Process & Tools</Text>
+              <Text style={styles.skillLevel}>Tools & Others</Text>
               <View style={styles.skillTags}>
-                <Text style={styles.skillTag}>Unit Testing (JUnit)</Text>
-                <Text style={styles.skillTag}>Git</Text>
-                <Text style={styles.skillTag}>CI/CD</Text>
-                <Text style={styles.skillTag}>Scrum/Agile</Text>
-                <Text style={styles.skillTag}>GitHub Copilot</Text>
-                <Text style={styles.skillTag}>Cursor IDE</Text>
-              </View>
-            </View>
-            <View style={styles.skillRow}>
-              <Text style={styles.skillLevel}>Basic Knowledge</Text>
-              <View style={styles.skillTags}>
-                <Text style={styles.skillTag}>Microservices</Text>
+                <Text style={styles.skillTag}>Apache Kafka</Text>
+                <Text style={styles.skillTag}>Git / CI/CD</Text>
                 <Text style={styles.skillTag}>Docker</Text>
+                <Text style={styles.skillTag}>Scrum / Agile</Text>
+                <Text style={styles.skillTag}>Unit Testing</Text>
+              </View>
+            </View>
+
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>Languages</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>Vietnamese (Native)</Text>
+                <Text style={styles.skillTag}>
+                  English (Professional Working Proficiency)
+                </Text>
               </View>
             </View>
           </View>
@@ -385,43 +380,22 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>WORK EXPERIENCE</Text>
 
+            {/* Generali */}
             <View style={styles.workHeader}>
-              <Text style={styles.workDateRange}>01/2025 - PRESENT</Text>
+              <Text style={styles.workDateRange}>01/2025 - Present</Text>
               <View style={styles.workTitleRow}>
                 <Text style={styles.workTitle}>FULL-STACK DEVELOPER</Text>
                 <Text style={styles.workCompany}>
-                  | Generali Vietnam (Via Partner)
+                  | Generali Vietnam (Onsite Contractor)
                 </Text>
               </View>
             </View>
 
             <Text style={styles.coreResponsibility}>
-              Core Responsibility: Key Member in the onsite development team,
-              participating in delivery of Greenfield Enterprise Applications.
-              Collaborated with the Solution Architect to implement solutions
-              following team standards.
+              Key member of the onsite development team, responsible for
+              delivering greenfield enterprise applications and ensuring system
+              stability.
             </Text>
-            <View style={styles.bulletItem} wrap={false}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.bulletText}>
-                <Text style={styles.boldText}>AI-Driven Optimization:</Text>{" "}
-                Implemented an AI-assisted development workflow using{" "}
-                <Text style={styles.boldText}>Cursor & Copilot</Text>, which{" "}
-                <Text style={styles.boldText}>
-                  reduced average coding time per task by 40%,
-                </Text>{" "}
-                allowing the team to focus on complex architecture logic.
-              </Text>
-            </View>
-            <View style={styles.bulletItem} wrap={false}>
-              <Text style={styles.bulletPoint}>•</Text>
-              <Text style={styles.bulletText}>
-                <Text style={styles.boldText}>Quality & Process:</Text> Follow{" "}
-                <Text style={styles.boldText}>Secure Coding</Text> principles to
-                prevent <Text style={styles.boldText}>Web Security</Text>{" "}
-                vulnerabilities.
-              </Text>
-            </View>
 
             {/* Project 1: Sales Activity */}
             <View style={styles.projectItem}>
@@ -432,67 +406,39 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
                 </Text>
               </View>
               <Text style={styles.roleText}>Role: Full-stack Developer</Text>
+
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Performance Optimization:</Text>{" "}
-                  Implemented{" "}
+                  <Text style={styles.boldText}>
+                    Event-Driven Architecture:
+                  </Text>{" "}
+                  Designed a decoupled notification system using{" "}
+                  <Text style={styles.boldText}>Apache Kafka</Text>, handling
+                  over <Text style={styles.boldText}>10,000+ events</Text>{" "}
+                  instantly to offload heavy processing from the core scheduler.
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  <Text style={styles.boldText}>Performance:</Text> implemented{" "}
                   <Text style={styles.boldText}>
                     Route-level Code Splitting
                   </Text>{" "}
-                  and <Text style={styles.boldText}>Lazy Loading</Text> for the
-                  Notification List component to significantly reduce the
-                  initial bundle size and improve page load speed.
+                  and <Text style={styles.boldText}>Lazy Loading</Text>,
+                  reducing initial bundle size by{" "}
+                  <Text style={styles.boldText}>40%</Text> and significantly
+                  improving load times.
                 </Text>
               </View>
+
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Quality Assurance:</Text>{" "}
-                  Applied{" "}
-                  <Text style={styles.boldText}>
-                    Production Build Best Practices
-                  </Text>{" "}
-                  (Tree-shaking, Minification) and resolved{" "}
-                  <Text style={styles.boldText}>Render-blocking resources</Text>{" "}
-                  identified via Lighthouse analysis.
-                </Text>
-              </View>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>
-                    Event-Driven Notification System:
-                  </Text>{" "}
-                  Designed a{" "}
-                  <Text style={styles.boldText}>decoupling architecture</Text>{" "}
-                  using Apache Kafka to handle bulk internal notifications.
-                </Text>
-              </View>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Mechanism:</Text> Offloaded
-                  heavy batch processing from the Job Scheduler by pushing{" "}
-                  <Text style={styles.boldText}>10,000+ events</Text> to Kafka
-                  topics instantly.
-                </Text>
-              </View>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Reliability:</Text> Implemented
-                  Consumers to process messages{" "}
-                  <Text style={styles.boldText}>asynchronously</Text> (template
-                  rendering & SQL persistence), preventing database congestion
-                  during peak broadcast times.
-                </Text>
-              </View>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Technologies:</Text> Java,
-                  Spring Boot (MVC, Security), Next.js, Kafka, Oracle.
+                  <Text style={styles.boldText}>Tech Stack:</Text> Java Spring
+                  Boot, Kafka, Next.js, Oracle.
                 </Text>
               </View>
             </View>
@@ -505,76 +451,36 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
                   Enterprise Document Management (EDM)
                 </Text>
               </View>
-              <Text style={styles.roleText}>
-                Role: Full-stack Developer
-              </Text>
+              <Text style={styles.roleText}>Role: Full-stack Developer</Text>
+
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Rapid Delivery:</Text> Delivered
-                  the core module{" "}
+                  <Text style={styles.boldText}>Accelerated Delivery:</Text>{" "}
+                  Completed core modules{" "}
                   <Text style={styles.boldText}>
                     5 months ahead of schedule
                   </Text>{" "}
-                  (3 months actual vs. 8 months planned) by utilizing{" "}
-                  <Text style={styles.boldText}>
-                    AI-driven development workflows
-                  </Text>
-                  , ensuring stability and zero critical defects at launch.
+                  (3 months vs. 8 months planned) through efficient workflow
+                  optimization and rapid prototyping.
                 </Text>
               </View>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>End-to-End Delivery:</Text>{" "}
-                  Leveraged AI tools to rapidly prototype complex{" "}
-                  <Text style={styles.boldText}>Angular</Text> UI and automate{" "}
-                  <Text style={styles.boldText}>Java Spring Boot</Text>{" "}
-                  persistence layers, ensuring seamless integration with{" "}
-                  <Text style={styles.boldText}>SQL Server</Text>.
-                </Text>
-              </View>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Outcome:</Text> The system was
-                  highly stable upon launch, handling large-scale data
-                  validation and bulk uploads with zero critical defects during
-                  the early delivery phase.
-                </Text>
-              </View>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Technologies:</Text> Java,
-                  Spring Data JPA, Angular, SQL Server (T-SQL).
-                </Text>
-              </View>
-            </View>
 
-            {/* Project 3: Quotation */}
-            <View style={styles.projectItem}>
-              <View style={styles.projectHeader}>
-                <Text style={styles.projectNumber}>3.</Text>
-                <Text style={styles.projectTitle}>Quotation System</Text>
-              </View>
-              <Text style={styles.roleText}>Role: Full-stack Developer</Text>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Responsibility:</Text> Developed
-                  Dynamic Form Interfaces using Angular & RxJS. Applied{" "}
-                  <Text style={styles.boldText}>Strict Typing</Text> and{" "}
-                  <Text style={styles.boldText}>Reactive Programming</Text>{" "}
-                  principles to handle complex async validations and guarantee
-                  real-time data consistency.
+                  <Text style={styles.boldText}>Quality:</Text> Achieved{" "}
+                  <Text style={styles.boldText}>zero critical defects</Text>{" "}
+                  during the initial launch phase by implementing rigorous
+                  validation logic and clean architecture patterns.
                 </Text>
               </View>
+
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Technologies:</Text> Angular,
-                  RxJS, HTML5/CSS3, Figma.
+                  <Text style={styles.boldText}>Tech Stack:</Text> Angular, Java
+                  Spring Data JPA, SQL Server, Oracle.
                 </Text>
               </View>
             </View>
@@ -585,7 +491,7 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
               <View style={styles.workTitleRow}>
                 <Text style={styles.workTitle}>FRONTEND DEVELOPER</Text>
                 <Text style={styles.workCompany}>
-                  | Remote / Freelance Projects
+                  | Remote International Clients
                 </Text>
               </View>
             </View>
@@ -594,24 +500,22 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  Developed responsive web applications for international
-                  clients using ReactJS ecosystem. Collaborated with remote
-                  teams via Git/Jira to deliver pixel-perfect UI from Figma
-                  designs.
+                  Built high-performance, responsive web applications for
+                  international clients using the React ecosystem.
                 </Text>
               </View>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  Optimized frontend performance and built reusable component
-                  libraries.
+                  Collaborated with global teams to translate Figma designs into
+                  pixel-perfect, interactive UI components.
                 </Text>
               </View>
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Technologies:</Text> ReactJS,
-                  Redux, HTML5, CSS3, RESTful APIs, Git.
+                  Developed reusable component libraries to standardize design
+                  systems across multiple projects.
                 </Text>
               </View>
             </View>
