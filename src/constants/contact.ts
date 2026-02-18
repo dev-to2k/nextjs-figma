@@ -1,5 +1,5 @@
 export const CONTACT = {
-  email: "thanhtrung.devtech@gmail.com",
+  email: "thanhtrung.1010.2k@gmail.com",
   phone: "0948 868 324",
   location: "Ho Chi Minh City",
   linkedinUrl: "https://www.linkedin.com/in/dev-to2k/",
