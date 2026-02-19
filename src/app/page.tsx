@@ -7,7 +7,7 @@ import WorkExperience from "@/components/landing/WorkExperience";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans selection:bg-primary/30">
+    <div className="min-h-screen font-sans selection:bg-foreground/10">
       <Header />
       <main>
         <Hero />
