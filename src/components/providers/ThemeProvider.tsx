@@ -18,32 +18,42 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    // Force dark mode
-    setTheme("dark");
+    const saved = localStorage.getItem("theme") as Theme | null;
+    if (saved === "light" || saved === "dark") {
+      setTheme(saved);
+    } else {
+      // Respect system preference
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      setTheme(prefersDark ? "dark" : "light");
+    }
   }, []);
 
   useEffect(() => {
     if (!mounted) return;
 
-    // Apply theme to document
     const root = document.documentElement;
 
-    // Remove both classes first
+    // Add transition class
+    root.classList.add("theme-transitioning");
+
+    // Remove both, then add current
     root.classList.remove("dark", "light");
+    root.classList.add(theme);
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
 
-    // Add the current theme class
-    root.classList.add("dark");
+    // Remove transition class after animation completes
+    const timeout = setTimeout(() => {
+      root.classList.remove("theme-transitioning");
+    }, 600);
 
-    // Also set data attribute for better compatibility
-    root.setAttribute("data-theme", "dark");
-
-    // Save to localStorage
-    localStorage.setItem("theme", "dark");
+    return () => clearTimeout(timeout);
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    // Disabled for now
-    // setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   return (

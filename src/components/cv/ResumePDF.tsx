@@ -9,7 +9,7 @@ import {
 } from "@react-pdf/renderer";
 import React from "react";
 
-// Modern Professional CV - 2026 HR Standard
+// ==================== CV TAILORED FOR THIS JOB (React/Next + Node/NestJS) ====================
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   skillLevel: {
-    width: 85, // Slightly wider to fit "Tools & Others"
+    width: 90, // Slightly wider to fit "Database & Others"
     fontSize: 9,
     color: "#1A202C",
     fontWeight: "bold",
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   workCompany: {
     fontSize: 11,
-    color: "#4A5568", // Darker gray for better readability
+    color: "#4A5568",
     marginLeft: 6,
   },
   coreResponsibility: {
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   },
   bulletText: {
     flex: 1,
-    fontSize: 9, // Increased slightly for readability
+    fontSize: 9,
     color: "#4A5568",
     lineHeight: 1.4,
   },
@@ -251,25 +251,16 @@ const styles = StyleSheet.create({
   },
 });
 
-interface ResumePDFProps {
-  locale?: "en" | "vi";
-}
-
-const ResumePDF: React.FC<ResumePDFProps> = () => {
+const ResumePDF: React.FC = () => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {/* ==================== HEADER (Dark Background) ==================== */}
+        {/* HEADER */}
         <View style={styles.header}>
-          {/* Avatar */}
           <View style={styles.avatarContainer}>
-            {/* 
-                IMPORTANT: Replace the source below with your permanent image link (Imgur/Cloudinary/etc).
-                Do NOT use Facebook links as they expire quickly.
-             */}
             <Image
               style={styles.avatar}
-              src="https://via.placeholder.com/150" // <-- REPLACE THIS LINK!
+              src="/images/z7443709003327_edeaf99e34baf546895785d8554f3e83.jpg"
             />
           </View>
           {/* Header Info */}
@@ -291,162 +282,183 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
           </View>
         </View>
 
-        {/* ==================== BODY ==================== */}
+        {/* BODY */}
         <View style={styles.body}>
-          {/* About Me */}
+          {/* ABOUT ME */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>ABOUT ME</Text>
             <Text style={styles.aboutText}>
-              Full-stack Developer with 3+ years of experience delivering
-              scalable enterprise applications. Proven track record in building
-              high-performance web systems using modern frameworks (React,
-              Angular, Next.js) and robust backends (Java Spring Boot).
-              Specialized in optimizing system performance, event-driven
-              architecture, and delivering complex features ahead of schedule
-              with zero critical defects.
+              Full-stack Developer with 3+ years building scalable web
+              applications (CRM, dashboard, management systems). Strong
+              expertise in{" "}
+              <Text style={styles.boldText}>
+                React.js, Next.js and TypeScript
+              </Text>
+              , specializing in performance optimization, lazy loading and
+              delivering excellent UI/UX across devices. Gained practical
+              backend experience with RESTful APIs and relational databases
+              through full-stack projects using Java Spring Boot. Quick learner,
+              ready to apply Node.js and NestJS to develop maintainable,
+              high-performance systems.
             </Text>
           </View>
 
-          {/* Education */}
+          {/* EDUCATION - ĐÃ CHỈNH HOÀN CHỈNH */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>EDUCATION</Text>
             <View style={styles.educationItem}>
               <Text style={styles.schoolName}>Nguyen Tat Thanh University</Text>
               <Text style={styles.educationDetails}>
-                2018 - 2023 | Bachelor of Information Technology
+                2018 – 2023 | Bachelor of Information Technology
               </Text>
               <Text style={styles.educationDetails}>
-                <Text style={styles.boldText}>
-                  Self-taught Angular & Apache Kafka
-                </Text>{" "}
-                within 3 months while balancing university studies and freelance
-                projects. Focus on Advanced Web Technologies and Enterprise
-                System Architecture.
+                Relevant Coursework: Object-Oriented Programming (Java),
+                Advanced Database Systems (SQL), Data Structures & Algorithms,
+                Advanced Web Technologies.
+              </Text>
+              <Text style={styles.educationDetails}>
+                Self-taught React.js, Next.js and event-driven architectures
+                while working on real freelance projects during and after
+                university, enabling rapid transition from academic Java
+                foundation to production full-stack development.
               </Text>
             </View>
           </View>
 
-          {/* Skills */}
+          {/* SKILLS */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>SKILLS</Text>
-
             <View style={styles.skillRow}>
               <Text style={styles.skillLevel}>Frontend</Text>
               <View style={styles.skillTags}>
-                <Text style={styles.skillTag}>React / Next.js</Text>
-                <Text style={styles.skillTag}>Angular (v17+)</Text>
+                <Text style={styles.skillTag}>React.js / Next.js</Text>
                 <Text style={styles.skillTag}>TypeScript</Text>
-                <Text style={styles.skillTag}>RxJS</Text>
-                <Text style={styles.skillTag}>Tailwind CSS</Text>
                 <Text style={styles.skillTag}>Performance Optimization</Text>
-              </View>
-            </View>
-
-            <View style={styles.skillRow}>
-              <Text style={styles.skillLevel}>Backend</Text>
-              <View style={styles.skillTags}>
-                <Text style={styles.skillTag}>Java</Text>
-                <Text style={styles.skillTag}>Spring Boot</Text>
-                <Text style={styles.skillTag}>Spring Security</Text>
-                <Text style={styles.skillTag}>JPA / Hibernate</Text>
-                <Text style={styles.skillTag}>REST API Design</Text>
-                <Text style={styles.skillTag}>SQL Server / Oracle</Text>
-              </View>
-            </View>
-
-            <View style={styles.skillRow}>
-              <Text style={styles.skillLevel}>Tools & Others</Text>
-              <View style={styles.skillTags}>
-                <Text style={styles.skillTag}>Apache Kafka</Text>
-                <Text style={styles.skillTag}>Git / CI/CD</Text>
-                <Text style={styles.skillTag}>Docker</Text>
-                <Text style={styles.skillTag}>Scrum / Agile</Text>
-                <Text style={styles.skillTag}>Unit Testing</Text>
-              </View>
-            </View>
-
-            <View style={styles.skillRow}>
-              <Text style={styles.skillLevel}>Languages</Text>
-              <View style={styles.skillTags}>
-                <Text style={styles.skillTag}>Vietnamese (Native)</Text>
                 <Text style={styles.skillTag}>
-                  English (Professional Working Proficiency)
+                  Lazy Loading & Code Splitting
                 </Text>
+                <Text style={styles.skillTag}>UI/UX Implementation</Text>
+              </View>
+            </View>
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>Backend & API</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>
+                  Node.js & NestJS (ready to apply)
+                </Text>
+                <Text style={styles.skillTag}>Java Spring Boot</Text>
+                <Text style={styles.skillTag}>RESTful API / GraphQL</Text>
+                <Text style={styles.skillTag}>JWT / OAuth2</Text>
+              </View>
+            </View>
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>Database & Others</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>PostgreSQL / MySQL</Text>
+                <Text style={styles.skillTag}>SQL Server / Oracle</Text>
+                <Text style={styles.skillTag}>Git / CI-CD</Text>
+                <Text style={styles.skillTag}>Docker (basic)</Text>
+                <Text style={styles.skillTag}>Scrum / Agile</Text>
+              </View>
+            </View>
+            <View style={styles.skillRow}>
+              <Text style={styles.skillLevel}>AI Tools</Text>
+              <View style={styles.skillTags}>
+                <Text style={styles.skillTag}>Cursor AI</Text>
+                <Text style={styles.skillTag}>GitHub Copilot</Text>
+                <Text style={styles.skillTag}>AI-Assisted Development</Text>
               </View>
             </View>
           </View>
 
-          {/* Work Experience */}
+          {/* LANGUAGES */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>LANGUAGES</Text>
+            <Text style={styles.aboutText}>
+              English: Reading & Writing (technical documents, chat) - Good |
+              Speaking & Listening - Basic
+            </Text>
+          </View>
+
+          {/* WORK EXPERIENCE */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>WORK EXPERIENCE</Text>
 
-            {/* Generali */}
+            {/* 1. JOB HIỆN TẠI - HERO SOLUTION INTERNAL */}
             <View style={styles.workHeader}>
-              <Text style={styles.workDateRange}>01/2025 - Present</Text>
+              <Text style={styles.workDateRange}>02/2026 - Present</Text>
               <View style={styles.workTitleRow}>
-                <Text style={styles.workTitle}>FULL-STACK DEVELOPER</Text>
+                <Text style={styles.workTitle}>REACT DEVELOPER</Text>
                 <Text style={styles.workCompany}>
-                  | Generali Vietnam (Onsite Contractor)
+                  | Internal Team – Hero Solution (HESO)
                 </Text>
               </View>
             </View>
 
             <Text style={styles.coreResponsibility}>
-              Key member of the onsite development team, responsible for
-              delivering greenfield enterprise applications and ensuring system
-              stability.
+              Developing new features and maintaining the POS (Point of Sale)
+              system to support retail operations and improve user experience.
             </Text>
 
-            {/* Project 1: Sales Activity */}
             <View style={styles.projectItem}>
               <View style={styles.projectHeader}>
-                <Text style={styles.projectNumber}>1.</Text>
+                <Text style={styles.projectNumber}>•</Text>
                 <Text style={styles.projectTitle}>
-                  Sales Activity Management System
+                  POS System (Point of Sale)
                 </Text>
               </View>
-              <Text style={styles.roleText}>Role: Full-stack Developer</Text>
+              <Text style={styles.roleText}>Role: React Developer</Text>
 
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
+                  Building and optimizing responsive UI/UX for retail staff and
+                  customers using{" "}
                   <Text style={styles.boldText}>
-                    Event-Driven Architecture:
-                  </Text>{" "}
-                  Designed a decoupled notification system using{" "}
-                  <Text style={styles.boldText}>Apache Kafka</Text>, handling
-                  over <Text style={styles.boldText}>10,000+ events</Text>{" "}
-                  instantly to offload heavy processing from the core scheduler.
+                    React.js + TypeScript + Next.js
+                  </Text>
+                  , focusing on performance and usability.
                 </Text>
               </View>
 
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Performance:</Text> implemented{" "}
-                  <Text style={styles.boldText}>
-                    Route-level Code Splitting
-                  </Text>{" "}
-                  and <Text style={styles.boldText}>Lazy Loading</Text>,
-                  reducing initial bundle size by{" "}
-                  <Text style={styles.boldText}>40%</Text> and significantly
-                  improving load times.
+                  Collaborating closely with design team to deliver
+                  pixel-perfect interfaces and implement new features that
+                  streamline sales processes.
                 </Text>
               </View>
 
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Tech Stack:</Text> Java Spring
-                  Boot, Kafka, Next.js, Oracle.
+                  Ensuring system stability through maintenance, bug fixing, and
+                  continuous improvement of frontend architecture.
                 </Text>
               </View>
             </View>
 
-            {/* Project 2: EDM */}
+            {/* 2. GENERALI */}
+            <View style={styles.workHeader} break>
+              <Text style={styles.workDateRange}>03/2025 – 01/2026</Text>
+              <View style={styles.workTitleRow}>
+                <Text style={styles.workTitle}>FULL-STACK DEVELOPER</Text>
+                <Text style={styles.workCompany}>
+                  | Onsite Contractor – Generali Vietnam (via Hero Solution)
+                </Text>
+              </View>
+            </View>
+
+            <Text style={styles.coreResponsibility}>
+              Key member in the onsite team delivering greenfield enterprise web
+              applications (CRM-style management systems).
+            </Text>
+
+            {/* Project 1: EDM (dự án chính) */}
             <View style={styles.projectItem}>
               <View style={styles.projectHeader}>
-                <Text style={styles.projectNumber}>2.</Text>
+                <Text style={styles.projectNumber}>1.</Text>
                 <Text style={styles.projectTitle}>
                   Enterprise Document Management (EDM)
                 </Text>
@@ -456,73 +468,180 @@ const ResumePDF: React.FC<ResumePDFProps> = () => {
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Accelerated Delivery:</Text>{" "}
-                  Completed core modules{" "}
+                  Delivered core CRM/ERP modules{" "}
                   <Text style={styles.boldText}>
                     5 months ahead of schedule
                   </Text>{" "}
-                  (3 months vs. 8 months planned) through efficient workflow
-                  optimization and rapid prototyping.
+                  with zero critical defects at launch.
                 </Text>
               </View>
 
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Quality:</Text> Achieved{" "}
-                  <Text style={styles.boldText}>zero critical defects</Text>{" "}
-                  during the initial launch phase by implementing rigorous
-                  validation logic and clean architecture patterns.
+                  Designed and implemented{" "}
+                  <Text style={styles.boldText}>
+                    agent lifecycle management
+                  </Text>{" "}
+                  (promote, demote, suspend, ...) including bulk upload and
+                  metadata management features.
                 </Text>
               </View>
 
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  <Text style={styles.boldText}>Tech Stack:</Text> Angular, Java
-                  Spring Data JPA, SQL Server, Oracle.
+                  Optimized complex business logic by moving heavy rules to{" "}
+                  <Text style={styles.boldText}>Stored Procedures</Text> in
+                  relational database, improving performance and data integrity.
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Technologies: Angular, Java Spring Boot, SQL Server (T-SQL).
                 </Text>
               </View>
             </View>
 
-            {/* Previous Job: Remote Frontend */}
+            {/* Project 2: Sales Activity (sole full-stack + team nhỏ) */}
+            <View style={styles.projectItem}>
+              <View style={styles.projectHeader}>
+                <Text style={styles.projectNumber}>2.</Text>
+                <Text style={styles.projectTitle}>
+                  Sales Activity Management System
+                </Text>
+              </View>
+              <Text style={styles.roleText}>Role: Full-stack Developer</Text>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Acted as the only Full-stack Developer in a compact team of 3
+                  (Solution Architect + Backend Java + Frontend) to build and
+                  maintain the Sales Activity system.
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Developed event-driven notification system using Apache Kafka
+                  to handle bulk notifications and cron jobs efficiently.
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Implemented high-performance frontend with{" "}
+                  <Text style={styles.boldText}>Next.js & React</Text>, applying
+                  Route-level Code Splitting and Lazy Loading to reduce bundle
+                  size by 40%.
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Technologies: Next.js, React, Java Spring Boot, Kafka, Oracle.
+                </Text>
+              </View>
+            </View>
+
+            {/* Freelance */}
             <View style={styles.workHeader}>
-              <Text style={styles.workDateRange}>04/2022 - 12/2024</Text>
+              <Text style={styles.workDateRange}>04/2022 – 02/2025</Text>
               <View style={styles.workTitleRow}>
                 <Text style={styles.workTitle}>FRONTEND DEVELOPER</Text>
                 <Text style={styles.workCompany}>
-                  | Remote International Clients
+                  | Remote – International Clients
                 </Text>
               </View>
             </View>
 
+            <Text style={styles.coreResponsibility}>
+              Built and optimized high-performance web applications for
+              international clients in a compact team of 3.
+            </Text>
+
+            {/* Project 1: Co-hoot (E-commerce) */}
             <View style={styles.projectItem}>
-              <View style={styles.bulletItem} wrap={false}>
-                <Text style={styles.bulletPoint}>•</Text>
-                <Text style={styles.bulletText}>
-                  Built high-performance, responsive web applications for
-                  international clients using the React ecosystem.
+              <View style={styles.projectHeader}>
+                <Text style={styles.projectNumber}>1.</Text>
+                <Text style={styles.projectTitle}>
+                  Co-hoot – E-commerce Platform
                 </Text>
               </View>
+              <Text style={styles.roleText}>
+                Role: Frontend Developer (React + Redux)
+              </Text>
+
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  Collaborated with global teams to translate Figma designs into
-                  pixel-perfect, interactive UI components.
+                  Developed core e-commerce features including product listing,
+                  cart, and integration with Lazada API.
                 </Text>
               </View>
+
               <View style={styles.bulletItem} wrap={false}>
                 <Text style={styles.bulletPoint}>•</Text>
                 <Text style={styles.bulletText}>
-                  Developed reusable component libraries to standardize design
-                  systems across multiple projects.
+                  Built responsive, pixel-perfect UI/UX using{" "}
+                  <Text style={styles.boldText}>React.js + Redux</Text>,
+                  ensuring seamless experience across devices.
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Maintained staging environment with clean architecture and
+                  RESTful API integration.
+                </Text>
+              </View>
+            </View>
+
+            {/* Project 2: Co-bee (Group Buy) */}
+            <View style={styles.projectItem}>
+              <View style={styles.projectHeader}>
+                <Text style={styles.projectNumber}>2.</Text>
+                <Text style={styles.projectTitle}>
+                  Co-bee – Group Buying Platform
+                </Text>
+              </View>
+              <Text style={styles.roleText}>
+                Role: Frontend Developer (React + Redux)
+              </Text>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Developed event-based group buying features (host events,
+                  member joining).
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Implemented scalable frontend architecture with React and
+                  Redux for smooth user interaction during high-traffic events.
+                </Text>
+              </View>
+
+              <View style={styles.bulletItem} wrap={false}>
+                <Text style={styles.bulletPoint}>•</Text>
+                <Text style={styles.bulletText}>
+                  Technologies: React.js, Redux, TypeScript, RESTful API.
                 </Text>
               </View>
             </View>
           </View>
         </View>
 
-        {/* Footer */}
         <Text style={styles.footer}>Page 1/1</Text>
       </Page>
     </Document>

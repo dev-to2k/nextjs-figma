@@ -1,6 +1,7 @@
 "use client";
 
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import DownloadCVButton from "@/components/cv/DownloadCVButton";
 import { useTranslation } from "@/components/providers/TranslationProvider";
 import { useLenis } from "@studio-freight/react-lenis";
@@ -12,7 +13,7 @@ export default function Header() {
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string
+    targetId: string,
   ) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -34,13 +35,14 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
             href="#"
-            className="flex items-center gap-3 text-foreground font-semibold text-lg tracking-tight hover:text-primary transition-colors"
+            className="flex items-center gap-3 text-foreground font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity"
           >
+            {/* Minimal geometric logo */}
             <svg
               width="24"
               height="24"
@@ -49,69 +51,62 @@ export default function Header() {
               xmlns="http://www.w3.org/2000/svg"
               className="text-foreground"
             >
-              <path
-                d="M12 2L2 7L12 12L22 7L12 2Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              <rect x="3" y="3" width="7" height="7" fill="currentColor" />
+              <rect
+                x="14"
+                y="3"
+                width="7"
+                height="7"
+                fill="currentColor"
+                opacity="0.6"
               />
-              <path
-                d="M2 17L12 22L22 17"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              <rect
+                x="3"
+                y="14"
+                width="7"
+                height="7"
+                fill="currentColor"
+                opacity="0.6"
               />
-              <path
-                d="M2 12L12 17L22 12"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              <rect
+                x="14"
+                y="14"
+                width="7"
+                height="7"
+                fill="currentColor"
+                opacity="0.3"
               />
             </svg>
-            <span className="hidden sm:inline">
+            <span className="hidden sm:inline font-medium">
               {t("name.fullName") || "Trương Thành Trung"}
             </span>
           </Link>
 
           <div className="flex items-center gap-6">
-            <nav className="hidden lg:flex items-center gap-6">
-              <a
-                href="#home"
-                onClick={(e) => handleNavClick(e, "home")}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {t("nav.home")}
-              </a>
-              <a
-                href="#projects"
-                onClick={(e) => handleNavClick(e, "projects")}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {t("nav.projects")}
-              </a>
-              <a
-                href="#experience"
-                onClick={(e) => handleNavClick(e, "experience")}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {t("nav.experience")}
-              </a>
-              <a
-                href="#contact"
-                onClick={(e) => handleNavClick(e, "contact")}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {t("nav.contact")}
-              </a>
+            <nav className="hidden lg:flex items-center gap-8">
+              {[
+                { id: "home", label: t("nav.home") },
+                { id: "projects", label: t("nav.projects") },
+                { id: "experience", label: t("nav.experience") },
+                { id: "contact", label: t("nav.contact") },
+              ].map(({ id, label }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={(e) => handleNavClick(e, id)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
+                >
+                  {label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground group-hover:w-full transition-all duration-300" />
+                </a>
+              ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <div className="hidden sm:block">
                 <DownloadCVButton />
               </div>
+              <ThemeToggle />
               <LanguageSwitcher />
             </div>
           </div>

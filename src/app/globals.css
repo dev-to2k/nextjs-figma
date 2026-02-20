@@ -7,62 +7,64 @@
   --font-mono: var(--font-jetbrains-mono);
 }
 
+/* ─── 2026 Monochrome Dark Mode (Default) ─── */
 :root {
-  --radius: 0.5rem;
-  --background: 15 23 42;
-  --foreground: 241 245 249;
-  --card: 30 41 59;
-  --card-foreground: 241 245 249;
-  --popover: 30 41 59;
-  --popover-foreground: 241 245 249;
-  --primary: 56 189 248;
-  --primary-foreground: 15 23 42;
-  --secondary: 51 65 85;
-  --secondary-foreground: 241 245 249;
-  --muted: 51 65 85;
-  --muted-foreground: 148 163 184;
-  --accent: 56 189 248;
-  --accent-foreground: 15 23 42;
-  --destructive: 239 68 68;
-  --destructive-foreground: 241 245 249;
-  --border: 71 85 105;
-  --input: 71 85 105;
-  --ring: 56 189 248;
-  --chart-1: 56 189 248;
-  --chart-2: 168 85 247;
-  --chart-3: 52 211 153;
-  --chart-4: 251 191 36;
-  --chart-5: 239 68 68;
+  --radius: 0.625rem;
+  --background: 8 8 8;
+  --foreground: 250 250 250;
+  --card: 18 18 18;
+  --card-foreground: 245 245 245;
+  --popover: 18 18 18;
+  --popover-foreground: 245 245 245;
+  --primary: 255 255 255;
+  --primary-foreground: 0 0 0;
+  --secondary: 38 38 38;
+  --secondary-foreground: 220 220 220;
+  --muted: 38 38 38;
+  --muted-foreground: 163 163 163;
+  --accent: 255 255 255;
+  --accent-foreground: 0 0 0;
+  --destructive: 220 38 38;
+  --destructive-foreground: 250 250 250;
+  --border: 38 38 38;
+  --input: 38 38 38;
+  --ring: 255 255 255;
+  --chart-1: 255 255 255;
+  --chart-2: 180 180 180;
+  --chart-3: 120 120 120;
+  --chart-4: 80 80 80;
+  --chart-5: 40 40 40;
 }
 
+/* ─── 2026 Monochrome Light Mode ─── */
 .light {
-  --background: 248 250 252;
-  --foreground: 15 23 42;
-  --card: 255 255 255;
-  --card-foreground: 15 23 42;
-  --popover: 255 255 255;
-  --popover-foreground: 15 23 42;
-  --primary: 2 132 199;
-  --primary-foreground: 248 250 252;
-  --secondary: 226 232 240;
-  --secondary-foreground: 15 23 42;
-  --muted: 226 232 240;
-  --muted-foreground: 100 116 139;
-  --accent: 2 132 199;
-  --accent-foreground: 248 250 252;
+  --background: 255 255 255;
+  --foreground: 10 10 10;
+  --card: 250 250 250;
+  --card-foreground: 10 10 10;
+  --popover: 250 250 250;
+  --popover-foreground: 10 10 10;
+  --primary: 10 10 10;
+  --primary-foreground: 255 255 255;
+  --secondary: 245 245 245;
+  --secondary-foreground: 38 38 38;
+  --muted: 245 245 245;
+  --muted-foreground: 115 115 115;
+  --accent: 10 10 10;
+  --accent-foreground: 255 255 255;
   --destructive: 220 38 38;
-  --destructive-foreground: 248 250 252;
-  --border: 203 213 225;
-  --input: 203 213 225;
-  --ring: 2 132 199;
+  --destructive-foreground: 255 255 255;
+  --border: 229 229 229;
+  --input: 229 229 229;
+  --ring: 10 10 10;
 }
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: calc(var(--radius) - 1px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 2px);
-  --radius-2xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
   --color-card: rgb(var(--card));
@@ -89,7 +91,15 @@ html {
 }
 
 body {
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -101,4 +111,53 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ─── Noise texture for premium feel ─── */
+.noise-overlay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--muted-foreground) / 0.3);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--muted-foreground) / 0.5);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgb(var(--primary) / 0.15);
+  color: rgb(var(--foreground));
+}
+
+/* ─── Smooth transitions for theme switching ─── */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 0.5s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    fill 0.3s ease,
+    stroke 0.3s ease !important;
 }
